@@ -12,12 +12,12 @@ public class SearchFieldSteps {
 
     @Step
     public void  search(){
-        homePage.searchAProduct("top");
+        homePage.searchAProduct("TOP SPRING-WHITE-S");
         homePage.clickOnSearchIcon();
     }
 
     @Step
-    public void verifySearchResults(){
-        Assert.assertTrue("the search aren t displayed", searchPage.productCategoryIsDisplayed());
+    public void verifySearchResults(String value){
+        Assert.assertTrue("products aren`t displayed", searchPage.getResultedProductContainer("TOP SPRING-WHITE-S").isDisplayed());
     }
 }
