@@ -27,6 +27,7 @@ homePage.clickLoginLink();
         loginPage.clickLoginBtn();
 
     }
+    
     @Step
     public void verifyLoggedIn(String value){
         Assert.assertTrue(dashboardPage.isWelcomeMsg(value));
