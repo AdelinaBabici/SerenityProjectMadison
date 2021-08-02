@@ -5,10 +5,16 @@ import com.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-public class SearchFieldSteps {
-
+public class SearchSteps {
+    SearchPage searchPage;
     private HomePage homePage;
-    private SearchPage searchPage;
+
+
+    @Step public void addProductToWoshlist(String name){
+        searchPage.addProductToWoshlist(name);
+    }
+
+
 
     @Step
     public void  search(){

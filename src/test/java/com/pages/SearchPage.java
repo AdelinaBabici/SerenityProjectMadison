@@ -20,7 +20,7 @@ public class SearchPage extends BasePage{
     public WebElement getResultedProductContainer(String productName){
 
         for (WebElement el : productsContainers) {
-            if (el.findElement(By.cssSelector(" h2[class*='product-name'")).getText().equals(productName)) {
+            if (el.findElement(By.cssSelector("h2[class*='product-name'")).getText().equals(productName)) {
                 return el;
             }
         }
@@ -30,5 +30,7 @@ public class SearchPage extends BasePage{
     public boolean productCategoryIsDisplayed(){
         return categorySection.isDisplayed();
     }
-
+public void addProductToWoshlist(String name){
+        getResultedProductContainer(name).findElement(By.className("link-wishlist")).click();
+}
 }
