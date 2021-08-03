@@ -9,19 +9,29 @@ public class SearchSteps {
     SearchPage searchPage;
     private HomePage homePage;
 
+    private String searchKeyword;
+    private String searchResult;
 
-    @Step public void addProductToWishlist(String name){
+    @Step
+    public void addProductToWishlist(String name){
         searchPage.addProductToWishlist(name);
     }
 
     @Step
-    public void  search(){
-        homePage.searchAProduct("TOP SPRING-WHITE-S");
+    public void searchAndVerifyResult(){
+        search(searchKeyword);
+        verifySearchResults(searchResult);
+    }
+
+
+    @Step
+    public void search(String keyword){
+        homePage.searchAProduct(keyword);
         homePage.clickOnSearchIcon();
     }
 
     @Step
     public void verifySearchResults(String value){
-        Assert.assertTrue("products aren`t displayed", searchPage.getResultedProductContainer("TOP SPRING-WHITE-S").isDisplayed());
+        Assert.assertTrue("products aren`t displayed", searchPage.getResultedProductContainer(value).isDisplayed());
     }
 }

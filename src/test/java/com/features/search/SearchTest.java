@@ -11,7 +11,7 @@ public class SearchTest extends BaseTest{
 
     @Test
     public void searchWithValidText(){
-        searchSteps.search();
+        searchSteps.search("TOP SPRING-WHITE-S");
         searchSteps.verifySearchResults("TOP SPRING-WHITE-S");
     }
 }
