@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class RegisterPage extends BasePage {
 
     @FindBy(id = "firstname")
@@ -30,6 +32,9 @@ public class RegisterPage extends BasePage {
     @FindBy(css = ".success-msg span")
     private WebElementFacade registrationConfirmationMessage;
 
+    @FindBy(className = "validation-advice")
+    private List<WebElement> validationMessages;
+
     public void EntryFirstName(String firstName) {
         typeInto(firstNameField, firstName);
     }
@@ -50,12 +55,26 @@ public class RegisterPage extends BasePage {
         typeInto(confirmPasswordField, confirmationPassword);
     }
 
-    public void ClickRegisterButton() {
+    public void clickRegisterButton() {
         clickOn(registerButton);
     }
 
-    public String getConfirmationMessage() {
+    public String getConfirmationMessage(){
         return registrationConfirmationMessage.getText();
+    }
+
+    public WebElement waitForConfirmationMessage(){
+        return new WebDriverWait(getDriver(), 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".success-msg span")));
+    }
+
+    public boolean verifyValidationMessages(String message) {
+        boolean isEqual = true;
+        for (WebElement element : validationMessages) {
+            if (!element.getText().equals(message)) {
+                return isEqual = false;
+            }
+        }
+        return isEqual;
     }
 }
 

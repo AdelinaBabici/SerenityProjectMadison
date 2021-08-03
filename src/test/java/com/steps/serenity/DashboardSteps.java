@@ -1,8 +1,10 @@
 package com.steps.serenity;
 
+import com.Utils.Constants;
 import com.pages.DashboardPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
@@ -13,15 +15,15 @@ public class DashboardSteps {
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
     private AccountInformationPage accountInformationPage;
+    private Constants constants;
 
     @Step
-    public void changeAccountPassword(){
-        homePage.open();
-        homePage.clickMyAccount();
-        homePage.clickLoginLink();
-        loginPage.setEmailField("moni@yahoo.com");
-        loginPage.setPassField("eminem");
-        loginPage.clickLoginBtn();
+    public void navigateToDashboardPage(){
+        dashboardPage.getDriver().get(constants.URL + "customer/account/");
+    }
+
+    @Step
+    public void changeAccountPassword(String currentPassword, String newPassword, String confirmationPassword){
         dashboardPage.clickChangePassword();
         accountInformationPage.enterCurrentPassword("eminem");
         accountInformationPage.enterNewPassword("eminem");
