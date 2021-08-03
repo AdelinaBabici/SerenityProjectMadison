@@ -7,17 +7,21 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SearchPage extends BasePage{
+public class SearchPage extends BasePage {
 
     @FindBy(className = "category-products")
     private WebElementFacade categorySection;
 
-    @FindBy(css =" h2[class*='product-name'")
-    private WebElement productsDisplayed;
-    @FindBy(css=".products-grid>li")
+    @FindBy(css = " h2[class*='product-name'")
+    private WebElementFacade productsDisplayed;
+
+    @FindBy(css = ".products-grid>li")
     private List<WebElement> productsContainers;
 
-    public WebElement getResultedProductContainer(String productName){
+    @FindBy(className = "note-msg")
+    private WebElementFacade noResultsMessage;
+
+    public WebElement getResultedProductContainer(String productName) {
 
         for (WebElement el : productsContainers) {
             if (el.findElement(By.cssSelector("h2[class*='product-name'")).getText().equals(productName)) {
@@ -27,11 +31,15 @@ public class SearchPage extends BasePage{
         return null;
     }
 
-    public boolean productCategoryIsDisplayed(){
+    public boolean productCategoryIsDisplayed() {
         return categorySection.isDisplayed();
     }
 
-public void addProductToWishlist(String name){
+    public String getNoResultsMessage() {
+        return noResultsMessage.getText();
+    }
+
+    public void addProductToWishlist(String name) {
         getResultedProductContainer(name).findElement(By.className("link-wishlist")).click();
-}
+    }
 }
