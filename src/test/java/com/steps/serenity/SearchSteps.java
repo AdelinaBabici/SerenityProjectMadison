@@ -9,10 +9,20 @@ public class SearchSteps {
     SearchPage searchPage;
     private HomePage homePage;
 
+    private String searchKeyword;
+    private String searchResult;
 
-    @Step public void addProductToWishlist(String name){
+    @Step
+    public void addProductToWishlist(String name){
         searchPage.addProductToWishlist(name);
     }
+
+    @Step
+    public void searchAndVerifyResult(){
+        search(searchKeyword);
+        verifySearchResults(searchResult);
+    }
+
 
     @Step
     public void search(String keyword){
