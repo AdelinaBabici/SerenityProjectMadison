@@ -15,13 +15,13 @@ public class SearchSteps {
     }
 
     @Step
-    public void  search(){
-        homePage.searchAProduct("TOP SPRING-WHITE-S");
+    public void search(String keyword){
+        homePage.searchAProduct(keyword);
         homePage.clickOnSearchIcon();
     }
 
     @Step
     public void verifySearchResults(String value){
-        Assert.assertTrue("products aren`t displayed", searchPage.getResultedProductContainer("TOP SPRING-WHITE-S").isDisplayed());
+        Assert.assertTrue("products aren`t displayed", searchPage.getResultedProductContainer(value).isDisplayed());
     }
 }
