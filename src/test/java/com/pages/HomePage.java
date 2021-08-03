@@ -4,8 +4,10 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 @DefaultUrl("http://qa2.dev.evozon.com/")
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
     @FindBy(css = "a[href*='/account'] .label")
     private WebElementFacade accountLink;
@@ -13,7 +15,7 @@ public class HomePage extends BasePage{
     @FindBy(css = "a[title='Log In']")
     private WebElementFacade loginLink;
 
-    @FindBy(id= "search")
+    @FindBy(id = "search")
     private WebElementFacade searchField;
     @FindBy(css = "button[title*='Search'")
     private WebElementFacade searchIcon;
@@ -21,21 +23,29 @@ public class HomePage extends BasePage{
     @FindBy(css = "a[title='Register']")
     private WebElementFacade registerLink;
 
-    public void clickMyAccount(){
+    @FindBy(css ="a[href*='/changepass']")
+    private WebElementFacade changePassword;
+
+    public void clickMyAccount() {
         clickOn(accountLink);
     }
-    public void clickLoginLink(){
+
+    public void clickLoginLink() {
         clickOn(loginLink);
     }
-    public void searchAProduct(String text){
+
+    public void searchAProduct(String text) {
         typeInto(searchField, text);
     }
-    public void clickOnSearchIcon(){
+
+    public void clickOnSearchIcon() {
         clickOn(searchIcon);
     }
-    public void clickRegisterLink(){
+
+    public void clickRegisterLink() {
         clickOn(registerLink);
     }
+//    public void clickChangePassword(){
+//        clickOn(changePassword);
+    }
 
-
-}
