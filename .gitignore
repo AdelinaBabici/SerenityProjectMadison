@@ -1,5 +1,6 @@
 /target/
 out
 *.iml
-.idea
 *.orig
+/src/.idea/
+/.idea/misc.xml
