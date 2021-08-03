@@ -18,6 +18,9 @@ public class HomePage extends BasePage{
     @FindBy(css = "button[title*='Search'")
     private WebElementFacade searchIcon;
 
+    @FindBy(css = "a[title='Register']")
+    private WebElementFacade registerLink;
+
     public void clickMyAccount(){
         clickOn(accountLink);
     }
@@ -30,5 +33,9 @@ public class HomePage extends BasePage{
     public void clickOnSearchIcon(){
         clickOn(searchIcon);
     }
+    public void clickRegisterLink(){
+        clickOn(registerLink);
+    }
+
 
 }

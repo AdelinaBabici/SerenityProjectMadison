@@ -1,6 +1,9 @@
 package com.steps.serenity;
 
-import com.pages.*;
+import com.pages.DashboardPage;
+import com.pages.LoginPage;
+import com.pages.ProductPage;
+import com.pages.WishlistPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
