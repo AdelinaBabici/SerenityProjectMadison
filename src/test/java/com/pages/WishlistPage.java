@@ -1,7 +1,6 @@
 package com.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +24,8 @@ public class WishlistPage extends BasePage{
     private WebElementFacade updateBtn;
     @FindBy(css = ".cart-cell button[title*='Add to Cart")
     private WebElementFacade addToCartBtn;
+    @FindBy(css = "table[id*='wishlist-table'")
+    private List<WebElement> productContainers;
 
     public void isProductDisplayedOnWishlistPage(String productName) {
         boolean productFound = false;
@@ -36,10 +37,20 @@ public class WishlistPage extends BasePage{
         }
     }
 
-
-    public void clickOnEditButton(){
-        clickOn(editBtn);
+    public WebElement getWishlistProductContainer(String name){
+        for (WebElement el : productContainers) {
+            if (el.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
+                clickOn(editBtn);
+                return el;
+            }
+        }
+        return null;
     }
+
+
+  //  public void clickOnEditButton(){
+ //       clickOn(editBtn);
+  //  }
 
     public boolean isQuantityChanged(String qty){
         return updatedQty.getAttribute("value").equals(qty);
