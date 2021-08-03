@@ -1,26 +1,46 @@
 package com.steps.serenity;
 
 import com.pages.*;
-import com.sun.org.apache.xalan.internal.templates.Constants;
 import net.thucydides.core.annotations.Step;
-import org.seleniumhq.jetty9.server.HomeBaseWarning;
+import org.junit.Assert;
+
+import javax.swing.plaf.PanelUI;
 
 public class WishlistSteps {
     private DashboardPage dashboardPage;
     private WishlistPage wishlistPage;
-    private ProductPage productPage;
+    private ProductsPage productPage;
     private LoginPage loginPage;
-
-
-    @Step
-    public void clickOnAddToWishlistLinks(){
-        productPage.clickOnAddToWishlistLink();
-    }
-
+    private ProductDetailPage productDetailPage;
 
 
     @Step
     public void verifyPresenceOfProductInWishlist(String value){
        wishlistPage.isProductDisplayedOnWishlistPage(value);
+    }
+    @Step
+    public void editQuantityInWishlist(String qty){
+        wishlistPage.clickOnEditButton();
+        productDetailPage.changeCurrentQuantity(qty);
+        productDetailPage.clickOnUpdateWishlistLink();
+
+    }
+    @Step
+    public void verifyIfQuantityIsChanged(String qty){
+        Assert.assertTrue(wishlistPage.isQuantityChanged(qty));
+    }
+    @Step
+    public void updateProductInWishList(String comment){
+        wishlistPage.enterCommentForAProduct(comment);
+        wishlistPage.clickOnUpdateWishlistButton();
+    }
+    @Step
+    public void verifyIfCommentIsDisplayed(String text){
+        Assert.assertTrue(wishlistPage.verifyIfCommentIsDisplayed(text));
+    }
+
+    @Step
+    public void addProductToCart(){
+        wishlistPage.clickOnAddToCartBtn();
     }
 }

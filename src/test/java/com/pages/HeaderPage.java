@@ -13,6 +13,7 @@ public class HeaderPage extends BasePage {
     @FindBy(css = ".catblocks span")
     private List<WebElementFacade> subcategoryNames;
 
+
     public void accessHeaderPage(String headerName) {
         for (WebElement options : headline) {
             if (options.getText().contains(headerName)) {

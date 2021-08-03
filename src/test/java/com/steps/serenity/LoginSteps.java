@@ -14,9 +14,9 @@ private HomePage homePage;
 
     @Step
     public void navigateToLoginPage(){
-homePage.open();
-homePage.clickMyAccount();
-homePage.clickLoginLink();
+    homePage.open();
+    homePage.clickMyAccount();
+    homePage.clickLoginLink();
 
     }
 

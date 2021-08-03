@@ -10,11 +10,9 @@ public class SearchSteps {
     private HomePage homePage;
 
 
-    @Step public void addProductToWoshlist(String name){
-        searchPage.addProductToWoshlist(name);
+    @Step public void addProductToWishlist(String name){
+        searchPage.addProductToWishlist(name);
     }
-
-
 
     @Step
     public void  search(){
