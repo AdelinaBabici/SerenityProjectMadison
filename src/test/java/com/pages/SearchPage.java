@@ -30,7 +30,8 @@ public class SearchPage extends BasePage{
     public boolean productCategoryIsDisplayed(){
         return categorySection.isDisplayed();
     }
-public void addProductToWoshlist(String name){
+
+public void addProductToWishlist(String name){
         getResultedProductContainer(name).findElement(By.className("link-wishlist")).click();
 }
 }
