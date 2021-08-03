@@ -1,9 +1,6 @@
 package com.steps.serenity;
 
-import com.pages.DashboardPage;
-import com.pages.LoginPage;
-import com.pages.ProductPage;
-import com.pages.WishlistPage;
+import com.pages.*;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
@@ -22,8 +19,8 @@ public class WishlistSteps {
        wishlistPage.isProductDisplayedOnWishlistPage(value);
     }
     @Step
-    public void editQuantityInWishlist(String qty){
-        wishlistPage.clickOnEditButton();
+    public void editQuantityInWishlist(String qty, String name){
+       wishlistPage.getWishlistProductContainer(name);
         productDetailPage.changeCurrentQuantity(qty);
         productDetailPage.clickOnUpdateWishlistLink();
 
