@@ -7,25 +7,24 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class CartPage extends BasePage{
+public class CartPage extends BasePage {
 
     @FindBy(className = "product-cart-info")
     private List<WebElement> cartProduct;
+
     @FindBy(css = "h2 a")
     private WebElementFacade productFromCart;
 
 
-    public void verifyPresenceOfProduct(String productName){
+    public boolean verifyPresenceOfProduct(String productName) {
         boolean productFound = false;
-        for(WebElement el: cartProduct){
-            if(productFromCart.getText().equals(productName)){
-                productFound = true;
-                break;
+        for (WebElement el : cartProduct) {
+            if (productFromCart.getText().equals(productName)) {
+                return productFound = true;
             }
         }
-
+        return productFound;
     }
-
 
 
 }
