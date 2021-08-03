@@ -60,4 +60,5 @@ public class WishlistTest extends BaseTest{
         cartSteps.verifyPresenceOfProductInCart("AVIATOR SUNGLASSES");
 
     }
+
 }
