@@ -13,7 +13,9 @@ public class WishlistSteps {
     private ProductsPage productPage;
     private LoginPage loginPage;
     private ProductDetailPage productDetailPage;
-
+    private String qty;
+    private String productName;
+    private String qtyy;
 
     @Step
     public void verifyPresenceOfProductInWishlist(String value){
@@ -21,18 +23,23 @@ public class WishlistSteps {
     }
     @Step
     public void editQuantityInWishlist(String name, String qty){
-        wishlistPage.getWishlistProductContainer(name);
+       wishlistPage.clickOnEditButtonForProduct(name);
         productDetailPage.changeCurrentQuantity(qty);
         productDetailPage.clickOnUpdateWishlistLink();
 
+    }
+    @Step
+    public void editAndVerifyQtyOfAProduct(){
+        editQuantityInWishlist(qty,productName);
+        verifyIfQuantityIsChanged(qtyy);
     }
     @Step
     public void verifyIfQuantityIsChanged(String qty){
         Assert.assertTrue(wishlistPage.isQuantityChanged(qty));
     }
     @Step
-    public void updateProductInWishList(String comment){
-        wishlistPage.enterCommentForAProduct(comment);
+    public void updateProductInWishList(String name,String comment){
+        wishlistPage.getWishlistCommentContainer(name,comment);
         wishlistPage.clickOnUpdateWishlistButton();
     }
     @Step

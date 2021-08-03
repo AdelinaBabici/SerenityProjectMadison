@@ -1,5 +1,6 @@
 package com.pages;
 
+import com.gargoylesoftware.htmlunit.WaitingRefreshHandler;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,23 +25,26 @@ public class WishlistPage extends BasePage{
     private WebElementFacade updateBtn;
     @FindBy(css = ".cart-cell button[title*='Add to Cart")
     private WebElementFacade addToCartBtn;
-    @FindBy(css = "table[id*='wishlist-table'")
+    @FindBy(css = "table[id*='wishlist-table'] tbody tr")
     private List<WebElement> productContainers;
+    @FindBy(css = "td[class*='wishlist-cell1 customer-wishlist-item-info'")
+    private List<WebElement> commentContainer;
 
     public void isProductDisplayedOnWishlistPage(String productName) {
         boolean productFound = false;
         for (WebElement el :  wishlistProducts) {
-            if (el.findElement(By.cssSelector("h3 a")).getText().equals(productName)) {
+            if (el.findElement(By.cssSelector("h3 a")).getText().equalsIgnoreCase(productName)) {
                 productFound = true;
                 break;
             }
         }
     }
-
+public void clickOnEditButtonForProduct(String product){
+    getWishlistProductContainer(product).findElement(By.cssSelector("a[class*='link-edit button button-secondary'")).click();
+}
     public WebElement getWishlistProductContainer(String name){
         for (WebElement el : productContainers) {
             if (el.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
-                clickOn(editBtn);
                 return el;
             }
         }
@@ -48,18 +52,11 @@ public class WishlistPage extends BasePage{
     }
 
 
-  //  public void clickOnEditButton(){
- //       clickOn(editBtn);
-  //  }
-
     public boolean isQuantityChanged(String qty){
         return updatedQty.getAttribute("value").equals(qty);
     }
 
-    public void enterCommentForAProduct(String comment){
-        commentsSection.clear();
-        typeInto(commentsSection,comment);
-    }
+
     public void clickOnUpdateWishlistButton(){
         clickOn(updateBtn);
     }
@@ -70,4 +67,15 @@ public class WishlistPage extends BasePage{
     public void clickOnAddToCartBtn(){
         clickOn(addToCartBtn);
     }
+
+    public void getWishlistCommentContainer(String name, String comment){
+        for (WebElement el : commentContainer) {
+            if (el.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
+                typeInto(commentsSection,comment);
+                break;
+            }
+        }
+
+    }
+
 }
