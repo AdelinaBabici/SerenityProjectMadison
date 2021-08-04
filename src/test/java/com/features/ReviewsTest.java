@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import com.steps.serenity.*;
 import net.thucydides.core.annotations.Steps;
@@ -22,9 +22,9 @@ public class ReviewsTest extends BaseTest{
         productDetailsSteps.setReviewRating("QUALITY",3);
         productDetailsSteps.setReviewRating("PRICE",4);
         productDetailsSteps.setReviewRating("VALUE",1);
-        productDetailsSteps.reviewProductWithValidData("beautiful product(color, type)","beautiful", "ada");
+        productDetailsSteps.reviewProduct("beautiful product(color, type)","beautiful", "ada");
         productDetailsSteps.clickOnSubmitReviewButton();
-        productDetailsSteps.verifyAcceptedReview("Your review has been accepted for moderation.");
+        productDetailsSteps.verifyMessageOfReviewApproval("Your review has been accepted for moderation.");
     }
 
 }

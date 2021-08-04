@@ -1,6 +1,6 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.steps.serenity.*;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/resource/addCommentForProductWl.csv")
-public class AddCommentForProductWishlistDDTest {
+public class WishlistDdtTest {
 
     @Managed(uniqueSession = true)
     private WebDriver webdriver;
@@ -35,12 +35,12 @@ public class AddCommentForProductWishlistDDTest {
 
 
     @Test
-    public void enterCommentForAProduct(){
+    public void commentOnAProduct(){
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         headerSteps.navigateToSubcategory(category,subcategory);
         searchSteps.addProductToWishlist(productName);
-        wishlistSteps.updateProductInWishList(productName,comment);
+        wishlistSteps.commentOnAProductInWishList(productName,comment);
         wishlistSteps.verifyIfCommentIsDisplayed(comment);
     }
 

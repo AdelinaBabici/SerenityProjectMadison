@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import com.pages.SearchPage;
 import com.steps.serenity.SearchSteps;
@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @RunWith(SerenityRunner.class)
 
-public class VerifySearchResults extends BaseTest {
+public class VerifySearchResultsTest extends BaseTest {
 
     @Steps
     private SearchSteps searchSteps;

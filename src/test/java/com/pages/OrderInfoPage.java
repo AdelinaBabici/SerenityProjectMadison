@@ -44,13 +44,7 @@ public class OrderInfoPage extends BasePage{
         }return null;
 
     }
-    public void enterValidDataInField(String text, String info){
-        if(selectEmailOrZipCode(text).getText().contains(text)){
-            typeInto(emailField, info);
-        }else {
-            typeInto(zipField, info);
-        }
-    }
+
 
     public void clickOnContinueButton(){
         clickOn(continueBtn);

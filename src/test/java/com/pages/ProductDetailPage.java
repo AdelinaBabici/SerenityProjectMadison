@@ -35,7 +35,6 @@ public class ProductDetailPage extends BasePage {
 
 
     public void changeCurrentQuantity(String qty) {
-        qtyInput.clear();
         typeInto(qtyInput, qty);
     }
 
@@ -57,7 +56,7 @@ public class ProductDetailPage extends BasePage {
         }
     }
 
-    public void enterAReviewForAProduct(String comment) {
+    public void writeReviewForAProduct(String comment) {
         typeInto(reviewSection, comment);
     }
 
@@ -65,7 +64,7 @@ public class ProductDetailPage extends BasePage {
         typeInto(summaryOfReview, comment);
     }
 
-    public void enterANicknameForReview(String nickname) {
+    public void enterNicknameForReview(String nickname) {
         typeInto(nicknameForReview, nickname);
     }
 

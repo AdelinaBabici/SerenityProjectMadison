@@ -3,6 +3,7 @@ package com.steps.serenity;
 import com.pages.HomePage;
 import com.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 
 public class SearchSteps {
@@ -17,7 +18,7 @@ public class SearchSteps {
         searchPage.addProductToWishlist(name);
     }
 
-    @Step
+    @Step("new title")
     public void searchAndVerifyResult() {
         search(searchKeyword);
         verifySearchResults(searchResult);

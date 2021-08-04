@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;

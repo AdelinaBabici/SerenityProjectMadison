@@ -1,11 +1,11 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.steps.serenity.*;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 
-public class CkeckoutTest extends BaseTest {
+public class CheckoutTest extends BaseTest {
     @Steps
     private ProductsSeps productsSeps;
 
@@ -35,5 +35,6 @@ public class CkeckoutTest extends BaseTest {
         checkoutSteps.savePaymentInformation();
         checkoutSteps.placeOrder();
         checkoutSteps.verifyOrderPlaceMessage();
+
     }
 }

@@ -1,12 +1,10 @@
 package com.steps.serenity;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.pages.DashboardPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
 public class DashboardSteps {

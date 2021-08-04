@@ -21,7 +21,7 @@ public class HeaderPage extends BasePage {
     }
 
 
-    public void accessHeaderPage(String headerName) {
+    public void clickOnACategory(String headerName) {
         for (WebElement options : headline) {
             if (options.getText().equalsIgnoreCase(headerName)) {
                 options.click();

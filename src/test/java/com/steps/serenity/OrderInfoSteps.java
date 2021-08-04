@@ -16,7 +16,7 @@ public class OrderInfoSteps {
         orderInfoPage.enterOrderId(id);
         orderInfoPage.enterLastName(name);
        orderInfoPage.selectEmailOrZipCode(text);
-     //   orderInfoPage.enterValidDataInField(text, info);
+
     }
     @Step
     public void enterEmail(String text){
@@ -31,7 +31,7 @@ public class OrderInfoSteps {
         orderInfoPage.clickOnContinueButton();
     }
     @Step
-    public void verifyIfUserGetOrdersStatus(String id){
+    public void verifyIfOrdersStatusIsDisplayed(String id){
         Assert.assertTrue(orderStatusPage.isOrderIdDisplayed(id));
     }
 }

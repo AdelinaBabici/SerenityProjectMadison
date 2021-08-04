@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import com.steps.serenity.CartSteps;
 import com.steps.serenity.HeaderSteps;
@@ -7,7 +7,7 @@ import com.steps.serenity.ProductsSeps;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 
-public class AddToCartTest extends  BaseTest{
+public class CartTest extends  BaseTest{
 
     @Steps
     private ProductsSeps productsSeps;

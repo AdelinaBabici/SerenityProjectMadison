@@ -1,6 +1,4 @@
-package com.Utils;
-
-import org.yecht.Data;
+package com.utils;
 
 public class Constants {
     public static final String URL = "http://qa2.dev.evozon.com/";
