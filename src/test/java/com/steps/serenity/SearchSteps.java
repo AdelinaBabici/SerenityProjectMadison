@@ -3,7 +3,6 @@ package com.steps.serenity;
 import com.pages.HomePage;
 import com.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 
 public class SearchSteps {

@@ -38,7 +38,6 @@ public class CheckoutPage extends BasePage {
 
     public void clickOnFreeShipping()  {
         //freeShippingRadioButton.waitUntilEnabled();
-        //waitABit(3000);
         clickOn(freeShippingRadioButton);
     }
 
@@ -47,7 +46,6 @@ public class CheckoutPage extends BasePage {
     }
 
     public void clickOnPaymentContinueButton() {
-        //waitABit(3000);
         clickOn(paymentContinueButton);
 
     }

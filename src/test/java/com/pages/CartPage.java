@@ -1,7 +1,6 @@
 package com.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
