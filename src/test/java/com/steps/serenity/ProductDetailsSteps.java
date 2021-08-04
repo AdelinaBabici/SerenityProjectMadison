@@ -33,4 +33,9 @@ public class ProductDetailsSteps {
         productDetailPage.isMessageOfReviewApprovalDisplayed(message);
     }
 
+    @Step
+    public void verifyValidationMessage(String msg){
+        productDetailPage.isValidationMessageDisplayed(msg);
+    }
+
 }

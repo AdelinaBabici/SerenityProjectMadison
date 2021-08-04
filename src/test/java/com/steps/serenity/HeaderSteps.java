@@ -10,4 +10,10 @@ public class HeaderSteps {
         headerPage.accessHeaderPage(category);
         headerPage.clickOnASubcategry(subcategory);
     }
+    @Step
+    public void navigateToMenCategory( String subcategory){
+        headerPage.clickMenCategory();
+        headerPage.clickOnASubcategry(subcategory);
+
+    }
 }

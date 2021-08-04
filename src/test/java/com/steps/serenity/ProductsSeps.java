@@ -19,5 +19,9 @@ public class ProductsSeps {
         productsPage.typeQuantity(quantity);
         productsPage.clickAddToCartButton();
     }
+    @Step
+    public void clickAddToCartBtn(){
+        productsPage.clickAddToCartButton();
+    }
 
 }

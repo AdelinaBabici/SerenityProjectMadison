@@ -13,6 +13,13 @@ public class HeaderPage extends BasePage {
     @FindBy(css = ".catblocks span")
     private List<WebElementFacade> subcategoryNames;
 
+    @FindBy(css =".level0.nav-2.parent > a")
+    private WebElementFacade menCategory;
+
+    public void clickMenCategory(){
+        clickOn(menCategory);
+    }
+
 
     public void accessHeaderPage(String headerName) {
         for (WebElement options : headline) {

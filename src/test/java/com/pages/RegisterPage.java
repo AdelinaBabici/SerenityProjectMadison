@@ -35,6 +35,9 @@ public class RegisterPage extends BasePage {
     @FindBy(className = "validation-advice")
     private List<WebElement> validationMessages;
 
+    @FindBy(id ="is_subscribed")
+    private WebElementFacade newsletter;
+
     public void EntryFirstName(String firstName) {
         typeInto(firstNameField, firstName);
     }
@@ -57,6 +60,9 @@ public class RegisterPage extends BasePage {
 
     public void clickRegisterButton() {
         clickOn(registerButton);
+    }
+    public void checkboxNewsletter(){
+        clickOn(newsletter);
     }
 
     public String getConfirmationMessage(){

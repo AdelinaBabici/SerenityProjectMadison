@@ -16,6 +16,7 @@ public class CartPage extends BasePage {
     private WebElementFacade productFromCart;
 
 
+
     public boolean verifyPresenceOfProduct(String productName) {
         boolean productFound = false;
         for (WebElement el : cartProduct) {

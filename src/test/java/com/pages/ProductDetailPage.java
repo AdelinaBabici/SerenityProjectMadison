@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ProductDetailPage extends BasePage{
+public class ProductDetailPage extends BasePage {
 
     @FindBy(css = ".qty-wrapper input[id*='qty'")
     private WebElementFacade qtyInput;
@@ -30,45 +30,53 @@ public class ProductDetailPage extends BasePage{
     @FindBy(css = "li[class='success-msg'")
     private WebElementFacade successMsg;
 
-    public void changeCurrentQuantity(String qty){
+    @FindBy(id = "advice-required-entry-attribute92")
+    private WebElementFacade validationadvice;
+
+
+    public void changeCurrentQuantity(String qty) {
         qtyInput.clear();
         typeInto(qtyInput, qty);
     }
 
-    public void clickOnUpdateWishlistLink(){
+    public void clickOnUpdateWishlistLink() {
         clickOn(updateWishlistLink);
     }
 
-    public void clickOnAddAReviewLink(){
+    public void clickOnAddAReviewLink() {
         clickOn(addAReviewLink);
     }
 
-    public void setReviewRating(String criteria, int nrStars){
-        for(WebElement el: reviewCriteriaRows){
-            if(el.findElement(By.cssSelector("th")).getText().equalsIgnoreCase(criteria)){
-                el.findElement(By.cssSelector("input[id*='"+nrStars+"']")).click();
+    public void setReviewRating(String criteria, int nrStars) {
+        for (WebElement el : reviewCriteriaRows) {
+            if (el.findElement(By.cssSelector("th")).getText().equalsIgnoreCase(criteria)) {
+                el.findElement(By.cssSelector("input[id*='" + nrStars + "']")).click();
                 break;
             }
 
         }
     }
 
-    public void enterAReviewForAProduct(String comment){
+    public void enterAReviewForAProduct(String comment) {
         typeInto(reviewSection, comment);
     }
-    public void writeSummaryOfReview(String comment){
-        typeInto(summaryOfReview,comment);
+
+    public void writeSummaryOfReview(String comment) {
+        typeInto(summaryOfReview, comment);
     }
-    public void enterANicknameForReview(String nickname){
+
+    public void enterANicknameForReview(String nickname) {
         typeInto(nicknameForReview, nickname);
     }
-    public void clickOnSubmitReviewBtn(){
+
+    public void clickOnSubmitReviewBtn() {
         clickOn(submitReviewBtn);
     }
 
-    public void isMessageOfReviewApprovalDisplayed(String message){
-        Assert.assertTrue("Review has not been approved",receiveValidMsg(message));
+    public void isMessageOfReviewApprovalDisplayed(String message) {
+        Assert.assertTrue("Review has not been approved", receiveValidMsg(message));
     }
+
     public boolean receiveValidMsg(String message) {
         boolean validMsg = false;
         if (successMsg.getText().contains(message)) {
@@ -79,4 +87,19 @@ public class ProductDetailPage extends BasePage{
 
     }
 
+    public boolean receiveValidationMessage(String message) {
+        boolean validMsg = false;
+        if (validationadvice.getText().contains(message)) {
+            return validMsg = true;
+        } else {
+            return false;
+        }
+    }
+
+    public void isValidationMessageDisplayed(String msg) {
+        Assert.assertTrue("Validation messaged is not diplayed.", receiveValidationMessage(msg));
+
+
+
+    }
 }

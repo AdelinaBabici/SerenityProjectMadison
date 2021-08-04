@@ -24,6 +24,7 @@ public class RegisterTest extends BaseTest {
         registerSteps.registerWithCredentials("Moni", "Holasz", email, "password", "password");
         registerPage.waitForConfirmationMessage();
         registerSteps.verifyConfirmationMessage();
+        registerSteps.verifyRegisterIn("Moni Holasz");
     }
 
     @Test

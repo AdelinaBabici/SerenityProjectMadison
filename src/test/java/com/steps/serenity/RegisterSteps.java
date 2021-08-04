@@ -1,5 +1,6 @@
 package com.steps.serenity;
 
+import com.pages.DashboardPage;
 import com.pages.HomePage;
 import com.pages.RegisterPage;
 import net.thucydides.core.annotations.Step;
@@ -9,6 +10,7 @@ public class RegisterSteps {
 
     private HomePage homePage;
     private RegisterPage registerPage;
+    private DashboardPage dashboardPage;
 
     @Step
     public void navigateToRegisterPage() {
@@ -24,6 +26,7 @@ public class RegisterSteps {
         registerPage.EntryEmail(email);
         registerPage.EntryPassword(password);
         registerPage.EntryConfirmationPassword(confirmationPassword);
+        registerPage.checkboxNewsletter();
         registerPage.clickRegisterButton();
     }
 
@@ -35,6 +38,12 @@ public class RegisterSteps {
     @Step
     public  void  verifyValidationMessages(String message){
         Assert.assertEquals(registerPage.verifyValidationMessages(message),true);
+    }
+
+    @Step
+    public void verifyRegisterIn(String value){
+        Assert.assertTrue(dashboardPage.isWelcomeMsg(value));
+
     }
 
 }
