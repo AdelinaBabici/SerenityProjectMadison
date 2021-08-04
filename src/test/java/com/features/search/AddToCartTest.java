@@ -30,7 +30,7 @@ public class AddToCartTest extends  BaseTest{
     }
     @Test
     public void AddToCart2(){
-        headerSteps.navigateToMenCategory("NEW ARRIVALS");
+        headerSteps.navigateToSubcategory("MEN","NEW ARRIVALS");
         productsSeps.clickOnAProduct("LINEN BLAZER");
         productsSeps.clickAddToCartBtn();
         productDetailsSteps.verifyValidationMessage("This is a required field.");

@@ -11,4 +11,9 @@ public class CartSteps {
     public void verifyPresenceOfProductInCart(String name){
         Assert.assertTrue(cartPage.verifyPresenceOfProduct(name));
     }
+    @Step
+    public void clickOnCheckoutBtn(){
+              cartPage.clickOnCheckoutButton();
+
+    }
 }

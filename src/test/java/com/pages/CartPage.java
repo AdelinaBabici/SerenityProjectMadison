@@ -15,6 +15,9 @@ public class CartPage extends BasePage {
     @FindBy(css = "h2 a")
     private WebElementFacade productFromCart;
 
+    @FindBy(className = "method-checkout-cart-methods-onepage-bottom")
+    private WebElementFacade proceedToCheckoutBtn;
+
 
 
     public boolean verifyPresenceOfProduct(String productName) {
@@ -25,6 +28,9 @@ public class CartPage extends BasePage {
             }
         }
         return productFound;
+    }
+    public void clickOnCheckoutButton(){
+        clickOn(proceedToCheckoutBtn);
     }
 
 

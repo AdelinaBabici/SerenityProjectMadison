@@ -23,7 +23,7 @@ public class HeaderPage extends BasePage {
 
     public void accessHeaderPage(String headerName) {
         for (WebElement options : headline) {
-            if (options.getText().contains(headerName)) {
+            if (options.getText().equalsIgnoreCase(headerName)) {
                 options.click();
                 break;
             }
