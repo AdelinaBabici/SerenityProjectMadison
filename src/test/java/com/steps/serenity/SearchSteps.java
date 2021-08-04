@@ -3,7 +3,6 @@ package com.steps.serenity;
 import com.pages.HomePage;
 import com.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 
 public class SearchSteps {
@@ -20,12 +19,12 @@ public class SearchSteps {
 
     @Step("new title")
     public void searchAndVerifyResult() {
-        search(searchKeyword);
+        searchInput(searchKeyword);
         verifySearchResults(searchResult);
     }
 
     @Step
-    public void search(String keyword) {
+    public void searchInput(String keyword) {
         homePage.searchAProduct(keyword);
         homePage.clickOnSearchIcon();
     }

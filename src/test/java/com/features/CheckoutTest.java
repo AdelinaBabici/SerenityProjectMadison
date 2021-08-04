@@ -29,7 +29,7 @@ public class CheckoutTest extends BaseTest {
         headerSteps.navigateToSubcategory("WOMEN", "NEW ARRIVALS");
         productsSeps.clickOnAProduct("TORI TANK");
         productsSeps.addToCart("indigo", "m", "1");
-        cartSteps.clickOnCheckoutBtn();
+        cartSteps.clickOnCheckoutButton();
         checkoutSteps.saveBillingAddress();
         checkoutSteps.saveShippingMethod();
         checkoutSteps.savePaymentInformation();

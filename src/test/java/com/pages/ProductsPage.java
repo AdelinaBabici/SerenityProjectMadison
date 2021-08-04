@@ -49,9 +49,9 @@ public class ProductsPage extends BasePage {
     }
 
     public void selectByColorName(String colorName) {
-        for (WebElement el : colorsContainer) {
-            if (el.findElement(By.xpath("//a[contains(@name,'" + colorName + "')]")).isDisplayed()) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el.findElement(By.xpath("//a[contains(@name,'" + colorName + "')]")));
+        for (WebElement element : colorsContainer) {
+            if (element.findElement(By.xpath("//a[contains(@name,'" + colorName + "')]")).isDisplayed()) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.findElement(By.xpath("//a[contains(@name,'" + colorName + "')]")));
                 break;
             }
         }
@@ -65,9 +65,9 @@ public class ProductsPage extends BasePage {
     }
 
         public void selectSizeByName (String sizeName){
-            for (WebElement el : sizesContainer) {
-                if (el.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")).isDisplayed()) {
-                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", el.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")));
+            for (WebElement element : sizesContainer) {
+                if (element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")).isDisplayed()) {
+                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")));
                     break;
                 }
             }

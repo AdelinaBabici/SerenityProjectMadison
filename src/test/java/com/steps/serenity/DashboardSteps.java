@@ -1,6 +1,7 @@
 package com.steps.serenity;
 
 import com.utils.Constants;
+import com.pages.AccountInformationPage;
 import com.pages.DashboardPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
@@ -30,7 +31,7 @@ public class DashboardSteps {
     }
 
     @Step
-    public void verifyIfPasswordChanged(String msg){
-        Assert.assertTrue(dashboardPage.isSuccessMessage(msg));
+    public void verifyIfPasswordChanged(String message){
+        Assert.assertTrue(dashboardPage.isSuccessMessage(message));
     }
 }

@@ -3,6 +3,8 @@ package com.pages;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 
+import static com.utils.Constants.TIMEOUT;
+
 public class CheckoutPage extends BasePage {
 
     @FindBy(css = "input[title='Ship to this address']")
@@ -36,7 +38,6 @@ public class CheckoutPage extends BasePage {
 
     public void clickOnFreeShipping()  {
         //freeShippingRadioButton.waitUntilEnabled();
-        //waitABit(3000);
         clickOn(freeShippingRadioButton);
     }
 
@@ -45,7 +46,6 @@ public class CheckoutPage extends BasePage {
     }
 
     public void clickOnPaymentContinueButton() {
-        //waitABit(3000);
         clickOn(paymentContinueButton);
 
     }
@@ -55,7 +55,7 @@ public class CheckoutPage extends BasePage {
 
     }
     public boolean verifyOrderPlaceMessage(){
-        waitForTextToAppear("THANK YOU FOR YOUR PURCHASE!",15000);
+        waitForTextToAppear("THANK YOU FOR YOUR PURCHASE!", TIMEOUT);
         return placeOrderMessage.containsText("THANK YOU FOR YOUR PURCHASE!");
 
 

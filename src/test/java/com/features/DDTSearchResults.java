@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @RunWith(SerenityRunner.class)
 
-public class VerifySearchResultsTest extends BaseTest {
+public class DDTSearchResults extends BaseTest {
 
     @Steps
     private SearchSteps searchSteps;

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value ="src/resource/SearchProducts.csv")
-public class SearchProductsTest extends BaseTest {
+public class DDTSearchProductsTest extends BaseTest {
 
     @Steps
     private SearchSteps searchSteps;
@@ -19,7 +19,7 @@ public class SearchProductsTest extends BaseTest {
 
     @Test
     public void searchWithValidText() {
-        searchSteps.search(searchKeyword);
+        searchSteps.searchInput(searchKeyword);
         searchSteps.verifySearchResults(searchResult);
     }
 }

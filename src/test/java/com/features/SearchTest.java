@@ -11,13 +11,13 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void searchWithValidText() {
-        searchSteps.search("TOP SPRING-WHITE-S");
+        searchSteps.searchInput("TOP SPRING-WHITE-S");
         searchSteps.verifySearchResults("TOP SPRING-WHITE-S");
     }
 
     @Test
     public void searchWithNoResults() {
-        searchSteps.search("woman");
+        searchSteps.searchInput("woman");
         searchSteps.verifyNoResultsMessage();
     }
 }

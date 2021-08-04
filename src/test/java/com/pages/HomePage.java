@@ -4,8 +4,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 @DefaultUrl("http://qa2.dev.evozon.com/")
 public class HomePage extends BasePage {
 
