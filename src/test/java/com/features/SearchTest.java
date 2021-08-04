@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import com.steps.serenity.SearchSteps;
 import net.thucydides.core.annotations.Steps;

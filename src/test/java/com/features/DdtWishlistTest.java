@@ -1,10 +1,9 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.steps.serenity.*;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.junit.runners.ThucydidesRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -12,7 +11,7 @@ import static net.thucydides.core.steps.stepdata.StepData.withTestDataFrom;
 
 
 @RunWith(SerenityRunner.class)
-public class EditQtyOfAProduct extends BaseTest{
+public class DdtWishlistTest extends BaseTest{
 
     @Steps
     private LoginSteps loginSteps;

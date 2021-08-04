@@ -18,10 +18,10 @@ public class ProductDetailsSteps {
     }
 
     @Step
-    public void reviewProductWithValidData(String comment, String summary, String nickname){
-        productDetailPage.enterAReviewForAProduct(comment);
+    public void reviewProduct(String comment, String summary, String nickname){
+        productDetailPage.writeReviewForAProduct(comment);
         productDetailPage.writeSummaryOfReview(summary);
-        productDetailPage.enterANicknameForReview(nickname);
+        productDetailPage.enterNicknameForReview(nickname);
     }
     @Step
     public void clickOnSubmitReviewButton(){
@@ -29,7 +29,7 @@ public class ProductDetailsSteps {
     }
 
     @Step
-    public void verifyAcceptedReview(String message){
+    public void verifyMessageOfReviewApproval(String message){
         productDetailPage.isMessageOfReviewApprovalDisplayed(message);
     }
 

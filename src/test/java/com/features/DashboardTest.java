@@ -1,7 +1,6 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
-import com.pages.DashboardPage;
+import com.utils.Constants;
 import com.pages.HomePage;
 import com.steps.serenity.DashboardSteps;
 import com.steps.serenity.LoginSteps;

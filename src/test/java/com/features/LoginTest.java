@@ -1,8 +1,7 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.steps.serenity.LoginSteps;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 

@@ -1,11 +1,10 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
-import com.Utils.Utils;
+import com.utils.Utils;
 import com.pages.RegisterPage;
-import com.steps.serenity.LoginSteps;
 import com.steps.serenity.RegisterSteps;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 
 public class RegisterTest extends BaseTest {
@@ -18,6 +17,7 @@ public class RegisterTest extends BaseTest {
     Utils utils = new Utils();
 
     @Test
+    @Title("Register with valid credentials")
     public void registerWithValidCredentials() {
         String email = "testing@"+ utils.getRandomNumberUntil(2000) +"testing.com";
         registerSteps.navigateToRegisterPage();

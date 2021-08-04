@@ -1,4 +1,4 @@
-package com.features.search;
+package com.features;
 
 import com.steps.serenity.FooterSteps;
 import com.steps.serenity.OrderInfoSteps;
@@ -14,12 +14,12 @@ public class OrderStatusTest extends BaseTest{
 
 
     @Test
-    public void checkOrderStatus(){
+    public void verifyOrderStatus(){
         footerSteps.clickOnOrdersAndReturnsLink();
         orderInfoSteps.fillInOrderInformationForm("145000015", "aaa","Email Address");
         orderInfoSteps.enterEmail("aaaaa@yahoo.com");
         orderInfoSteps.clickOnContinueButton();
-        orderInfoSteps.verifyIfUserGetOrdersStatus("145000015");
+        orderInfoSteps.verifyIfOrdersStatusIsDisplayed("145000015");
 
     }
 }

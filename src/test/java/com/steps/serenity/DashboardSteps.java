@@ -1,6 +1,6 @@
 package com.steps.serenity;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.pages.AccountInformationPage;
 import com.pages.DashboardPage;
 import com.pages.HomePage;

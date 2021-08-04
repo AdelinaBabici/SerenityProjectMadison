@@ -1,6 +1,6 @@
-package com.features.search;
+package com.features;
 
-import com.Utils.Constants;
+import com.utils.Constants;
 import com.steps.serenity.*;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
@@ -20,6 +20,7 @@ public class WishlistTest extends BaseTest{
     @Steps
     private CartSteps cartSteps;
 
+
     @Test
     public void addProductToWishlist(){
         headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
@@ -35,7 +36,7 @@ public class WishlistTest extends BaseTest{
         headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
         wishlistSteps.editQuantityInWishlist("5","AVIATOR SUNGLASSES");
-        wishlistSteps.verifyIfQuantityIsChanged("5");
+        wishlistSteps.verifyIfQuantityIsUpdated("5");
 
 
     }
@@ -46,7 +47,7 @@ public class WishlistTest extends BaseTest{
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        wishlistSteps.updateProductInWishList("AVIATOR SUNGLASSES","beautiful");
+        wishlistSteps.commentOnAProductInWishList("AVIATOR SUNGLASSES","beautiful");
         wishlistSteps.verifyIfCommentIsDisplayed("beautiful");
     }
 

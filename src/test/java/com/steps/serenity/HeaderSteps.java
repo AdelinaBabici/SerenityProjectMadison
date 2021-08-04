@@ -7,7 +7,7 @@ public class HeaderSteps {
     private HeaderPage headerPage;
     @Step
     public void navigateToSubcategory(String category, String subcategory){
-        headerPage.accessHeaderPage(category);
+        headerPage.clickOnACategory(category);
         headerPage.clickOnASubcategry(subcategory);
     }
 }
