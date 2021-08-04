@@ -20,7 +20,7 @@ public class ProductsSeps {
         productsPage.clickAddToCartButton();
     }
     @Step
-    public void clickAddToCartBtn(){
+    public void clickAddToCartButton(){
         productsPage.clickAddToCartButton();
     }
 

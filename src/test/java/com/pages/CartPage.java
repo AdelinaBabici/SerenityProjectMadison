@@ -16,7 +16,7 @@ public class CartPage extends BasePage {
     private WebElementFacade productFromCart;
 
     @FindBy(className = "method-checkout-cart-methods-onepage-bottom")
-    private WebElementFacade proceedToCheckoutBtn;
+    private WebElementFacade proceedToCheckoutButton;
 
 
 
@@ -30,7 +30,7 @@ public class CartPage extends BasePage {
         return productFound;
     }
     public void clickOnCheckoutButton(){
-        clickOn(proceedToCheckoutBtn);
+        clickOn(proceedToCheckoutButton);
     }
 
 

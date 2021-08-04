@@ -1,4 +1,4 @@
-package com.steps.serenity;
+package com.pages;
 
 import com.pages.BasePage;
 import net.serenitybdd.core.pages.WebElementFacade;

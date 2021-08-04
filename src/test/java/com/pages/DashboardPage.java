@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class DashboardPage extends BasePage {
 
     @FindBy(css = ".hello strong")
-    private WebElementFacade welcomeMsg;
+    private WebElementFacade welcomeMessage;
 
     @FindBy(css = ".success-msg span")
     private WebElementFacade confirmationMessage;
@@ -15,15 +15,15 @@ public class DashboardPage extends BasePage {
     private WebElementFacade changePassword;
 
     @FindBy(className = "success-msg")
-    private WebElementFacade successMsg;
+    private WebElementFacade successMessage;
 
-    public boolean isWelcomeMsg(String text) {
-        return welcomeMsg.containsOnlyText("Hello, " + text + "!");
+    public boolean isWelcomeMessage(String text) {
+        return welcomeMessage.containsOnlyText("Hello, " + text + "!");
     }
     public void clickChangePassword(){
         clickOn(changePassword);
     }
-    public boolean isSuccessMessage(String msg){
-        return successMsg.containsText("The account information has been saved.");
+    public boolean isSuccessMessage(String message){
+        return successMessage.containsText("The account information has been saved.");
     }
 }

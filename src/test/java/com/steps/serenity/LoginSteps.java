@@ -23,14 +23,14 @@ private HomePage homePage;
     @Step
     public void loginWithCredentials(String email, String passsword){
         loginPage.setEmailField(email);
-        loginPage.setPassField(passsword);
-        loginPage.clickLoginBtn();
+        loginPage.setPasswordField(passsword);
+        loginPage.clickLoginButton();
 
     }
     
     @Step
     public void verifyLoggedIn(String value){
-        Assert.assertTrue(dashboardPage.isWelcomeMsg(value));
+        Assert.assertTrue(dashboardPage.isWelcomeMessage(value));
     }
 
 }

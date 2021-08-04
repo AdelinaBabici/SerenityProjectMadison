@@ -12,7 +12,7 @@ public class CartSteps {
         Assert.assertTrue(cartPage.verifyPresenceOfProduct(name));
     }
     @Step
-    public void clickOnCheckoutBtn(){
+    public void clickOnCheckoutButton(){
               cartPage.clickOnCheckoutButton();
 
     }

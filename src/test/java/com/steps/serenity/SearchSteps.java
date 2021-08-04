@@ -19,12 +19,12 @@ public class SearchSteps {
 
     @Step
     public void searchAndVerifyResult() {
-        search(searchKeyword);
+        searchInput(searchKeyword);
         verifySearchResults(searchResult);
     }
 
     @Step
-    public void search(String keyword) {
+    public void searchInput(String keyword) {
         homePage.searchAProduct(keyword);
         homePage.clickOnSearchIcon();
     }

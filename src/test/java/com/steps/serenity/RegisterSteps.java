@@ -21,11 +21,11 @@ public class RegisterSteps {
 
     @Step
     public void registerWithCredentials(String firstName, String lastName, String email, String password, String confirmationPassword) {
-        registerPage.EntryFirstName(firstName);
-        registerPage.EntryLastName(lastName);
-        registerPage.EntryEmail(email);
-        registerPage.EntryPassword(password);
-        registerPage.EntryConfirmationPassword(confirmationPassword);
+        registerPage.EnterFirstName(firstName);
+        registerPage.EnterLastName(lastName);
+        registerPage.EnterEmail(email);
+        registerPage.EnterPassword(password);
+        registerPage.EnterConfirmationPassword(confirmationPassword);
         registerPage.checkboxNewsletter();
         registerPage.clickRegisterButton();
     }
@@ -42,7 +42,7 @@ public class RegisterSteps {
 
     @Step
     public void verifyRegisterIn(String value){
-        Assert.assertTrue(dashboardPage.isWelcomeMsg(value));
+        Assert.assertTrue(dashboardPage.isWelcomeMessage(value));
 
     }
 

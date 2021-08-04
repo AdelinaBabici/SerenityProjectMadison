@@ -22,7 +22,7 @@ public class AddToCartTest extends  BaseTest{
     private ProductDetailsSteps productDetailsSteps;
 
     @Test
-    public  void AddToCart(){
+    public void AddToCart(){
         headerSteps.navigateToSubcategory("WOMEN","NEW ARRIVALS");
         productsSeps.clickOnAProduct("TORI TANK");
         productsSeps.addToCart("indigo", "m","1");
@@ -32,7 +32,7 @@ public class AddToCartTest extends  BaseTest{
     public void AddToCart2(){
         headerSteps.navigateToSubcategory("MEN","NEW ARRIVALS");
         productsSeps.clickOnAProduct("LINEN BLAZER");
-        productsSeps.clickAddToCartBtn();
+        productsSeps.clickAddToCartButton();
         productDetailsSteps.verifyValidationMessage("This is a required field.");
 
     }

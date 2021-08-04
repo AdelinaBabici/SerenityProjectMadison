@@ -1,6 +1,5 @@
 package com.pages;
 
-import com.gargoylesoftware.htmlunit.WaitingRefreshHandler;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -12,7 +11,7 @@ import java.util.List;
 public class ProductDetailPage extends BasePage {
 
     @FindBy(css = ".qty-wrapper input[id*='qty'")
-    private WebElementFacade qtyInput;
+    private WebElementFacade quantityInput;
     @FindBy(css = "a[href*='updateItemOptions'")
     private WebElementFacade updateWishlistLink;
     @FindBy(css = "a[href*='review-form'")
@@ -26,17 +25,17 @@ public class ProductDetailPage extends BasePage {
     @FindBy(css = "input[id='nickname_field'")
     private WebElementFacade nicknameForReview;
     @FindBy(css = "button[title='Submit Review'")
-    private WebElementFacade submitReviewBtn;
+    private WebElementFacade submitReviewButton;
     @FindBy(css = "li[class='success-msg'")
-    private WebElementFacade successMsg;
+    private WebElementFacade successMessage;
 
     @FindBy(id = "advice-required-entry-attribute92")
-    private WebElementFacade validationadvice;
+    private WebElementFacade validationAdvice;
 
 
-    public void changeCurrentQuantity(String qty) {
-        qtyInput.clear();
-        typeInto(qtyInput, qty);
+    public void changeCurrentQuantity(String quantity) {
+        quantityInput.clear();
+        typeInto(quantityInput, quantity);
     }
 
     public void clickOnUpdateWishlistLink() {
@@ -70,7 +69,7 @@ public class ProductDetailPage extends BasePage {
     }
 
     public void clickOnSubmitReviewBtn() {
-        clickOn(submitReviewBtn);
+        clickOn(submitReviewButton);
     }
 
     public void isMessageOfReviewApprovalDisplayed(String message) {
@@ -79,7 +78,7 @@ public class ProductDetailPage extends BasePage {
 
     public boolean receiveValidMsg(String message) {
         boolean validMsg = false;
-        if (successMsg.getText().contains(message)) {
+        if (successMessage.getText().contains(message)) {
             return validMsg = true;
         } else {
             return false;
@@ -89,15 +88,15 @@ public class ProductDetailPage extends BasePage {
 
     public boolean receiveValidationMessage(String message) {
         boolean validMsg = false;
-        if (validationadvice.getText().contains(message)) {
+        if (validationAdvice.getText().contains(message)) {
             return validMsg = true;
         } else {
             return false;
         }
     }
 
-    public void isValidationMessageDisplayed(String msg) {
-        Assert.assertTrue("Validation messaged is not diplayed.", receiveValidationMessage(msg));
+    public void isValidationMessageDisplayed(String message) {
+        Assert.assertTrue("Validation messaged is not diplayed.", receiveValidationMessage(message));
 
 
 

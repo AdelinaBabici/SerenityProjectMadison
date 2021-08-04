@@ -38,23 +38,23 @@ public class RegisterPage extends BasePage {
     @FindBy(id ="is_subscribed")
     private WebElementFacade newsletter;
 
-    public void EntryFirstName(String firstName) {
+    public void EnterFirstName(String firstName) {
         typeInto(firstNameField, firstName);
     }
 
-    public void EntryLastName(String lastName) {
+    public void EnterLastName(String lastName) {
         typeInto(lastNameField, lastName);
     }
 
-    public void EntryEmail(String email) {
+    public void EnterEmail(String email) {
         typeInto(emailAddressField, email);
     }
 
-    public void EntryPassword(String password) {
+    public void EnterPassword(String password) {
         typeInto(passwordField, password);
     }
 
-    public void EntryConfirmationPassword(String confirmationPassword) {
+    public void EnterConfirmationPassword(String confirmationPassword) {
         typeInto(confirmPasswordField, confirmationPassword);
     }
 
