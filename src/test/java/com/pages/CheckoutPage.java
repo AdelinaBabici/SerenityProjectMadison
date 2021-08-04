@@ -55,6 +55,7 @@ public class CheckoutPage extends BasePage {
 
     }
     public boolean verifyOrderPlaceMessage(){
+        waitForTextToAppear("THANK YOU FOR YOUR PURCHASE!",15000);
         return placeOrderMessage.containsText("THANK YOU FOR YOUR PURCHASE!");
 
 
