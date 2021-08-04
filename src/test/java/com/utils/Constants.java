@@ -9,4 +9,6 @@ public class Constants {
     public static  final String USER_TO_UPDATE_PASSWORD = "eminem";
     public static  final String USER_TO_UPDATE_USERNAME = "mona@yahoo.com";
 
+    public  static  final int TIMEOUT = 15000;
+
 }
