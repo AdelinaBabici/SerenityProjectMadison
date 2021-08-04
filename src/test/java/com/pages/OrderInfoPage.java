@@ -1,6 +1,5 @@
 package com.pages;
 
-import com.gargoylesoftware.htmlunit.WaitingRefreshHandler;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,29 +14,29 @@ public class OrderInfoPage extends BasePage{
     @FindBy(css = "input[id='oar_billing_lastname'")
     private WebElementFacade lastNameField;
     @FindBy(css = "select[id*='quick_search_type_id'")
-    private WebElementFacade findByField;
+    private WebElementFacade emailOrZipCodeDropdownlist;
     @FindBy(css = "input[id='oar_email'")
     private WebElementFacade emailField;
     @FindBy(css = "input[name='oar_zip'")
     private WebElementFacade zipField;
     @FindBy(css = "button[title*='Continue'")
-    private WebElementFacade continueBtn;
+    private WebElementFacade continueButton;
 
 
     public void enterOrderId(String id){
         typeInto(orderIdField, id);
     }
-    public void enterLastName(String name){
-        typeInto(lastNameField, name);
+    public void enterLastName(String lastName){
+        typeInto(lastNameField, lastName);
     }
     public WebElement selectEmailOrZipCode(String text) {
-        Select oselect = new Select(findByField);
+        Select oselect = new Select(emailOrZipCodeDropdownlist);
        // findByField.selectByVisibleText(text);
         List<WebElement> emailOrZipCode = oselect.getOptions();
-        for(WebElement el :emailOrZipCode){
-            if(el.getText().equalsIgnoreCase(text)){
-                el.click();
-                return el;
+        for(WebElement emailZipCode :emailOrZipCode){
+            if(emailZipCode.getText().equalsIgnoreCase(text)){
+                emailZipCode.click();
+                return emailZipCode;
 
             }
 
@@ -47,7 +46,7 @@ public class OrderInfoPage extends BasePage{
 
 
     public void clickOnContinueButton(){
-        clickOn(continueBtn);
+        clickOn(continueButton);
     }
     public void enterEmail(String text){
         typeInto(emailField,text);

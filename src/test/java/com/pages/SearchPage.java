@@ -23,17 +23,14 @@ public class SearchPage extends BasePage {
 
     public WebElement getResultedProductContainer(String productName) {
 
-        for (WebElement el : productsContainers) {
-            if (el.findElement(By.cssSelector("h2[class*='product-name'")).getText().equals(productName)) {
-                return el;
+        for (WebElement product : productsContainers) {
+            if (product.findElement(By.cssSelector("h2[class*='product-name'")).getText().equals(productName)) {
+                return product;
             }
         }
         return null;
     }
-
-    public boolean productCategoryIsDisplayed() {
-        return categorySection.isDisplayed();
-    }
+    
 
     public String getNoResultsMessage() {
         return noResultsMessage.getText();

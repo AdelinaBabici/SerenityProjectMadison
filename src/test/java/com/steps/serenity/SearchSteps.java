@@ -17,7 +17,7 @@ public class SearchSteps {
         searchPage.addProductToWishlist(name);
     }
 
-    @Step("new title")
+    @Step
     public void searchAndVerifyResult() {
         searchInput(searchKeyword);
         verifySearchResults(searchResult);

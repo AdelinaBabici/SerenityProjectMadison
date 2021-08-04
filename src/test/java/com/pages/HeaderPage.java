@@ -8,33 +8,25 @@ import java.util.List;
 
 public class HeaderPage extends BasePage {
     @FindBy(css = "#header-nav ol > li")
-    private List<WebElement> headline;
+    private List<WebElement> categories;
 
     @FindBy(css = ".catblocks span")
-    private List<WebElementFacade> subcategoryNames;
+    private List<WebElementFacade> subcategories;
 
-    @FindBy(css =".level0.nav-2.parent > a")
-    private WebElementFacade menCategory;
-
-    public void clickMenCategory(){
-        clickOn(menCategory);
-    }
-
-
-    public void clickOnACategory(String headerName) {
-        for (WebElement options : headline) {
-            if (options.getText().equalsIgnoreCase(headerName)) {
-                options.click();
+    public void clickOnACategory(String categoryName) {
+        for (WebElement category : categories) {
+            if (category.getText().equalsIgnoreCase(categoryName)) {
+                category.click();
                 break;
             }
         }
 
     }
 
-    public void clickOnASubcategry(String name) {
-        for (WebElement op : subcategoryNames) {
-            if (op.getText().equals(name)) {
-                op.click();
+    public void clickOnASubcategry(String subcategoryName) {
+        for (WebElement subcategory : subcategories) {
+            if (subcategory.getText().equals(subcategoryName)) {
+                subcategory.click();
                 break;
             }
         }

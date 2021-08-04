@@ -27,22 +27,22 @@ public class WishlistSteps {
 
     }
     @Step
-    public void editAndVerifyQtyOfAProduct(){
+    public void editAndVerifyQuantityOfAProduct(){
         editQuantityInWishlist(qty,productName);
         verifyIfQuantityIsUpdated(qtyy);
     }
     @Step
-    public void verifyIfQuantityIsUpdated(String qty){
-        Assert.assertTrue(wishlistPage.isQuantityChanged(qty));
+    public void verifyIfQuantityIsUpdated(String quantity){
+        Assert.assertTrue(wishlistPage.isQuantityChanged(quantity));
     }
     @Step
-    public void commentOnAProductInWishList(String name, String comment){
+    public void commentAProductInWishList(String name, String comment){
         wishlistPage.getWishlistCommentContainer(name,comment);
         wishlistPage.clickOnUpdateWishlistButton();
     }
     @Step
     public void verifyIfCommentIsDisplayed(String text){
-        Assert.assertTrue(wishlistPage.verifyIfCommentIsDisplayed(text));
+        Assert.assertTrue(wishlistPage.isCommentIsDisplayed(text));
     }
 
     @Step

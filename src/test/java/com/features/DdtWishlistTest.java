@@ -32,7 +32,7 @@ public class DdtWishlistTest extends BaseTest{
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        withTestDataFrom("src/resource/editQtyofProduct.csv").run(wishlistSteps).editAndVerifyQtyOfAProduct();
+        withTestDataFrom("src/resource/editQtyofProduct.csv").run(wishlistSteps).editAndVerifyQuantityOfAProduct();
     }
 
 }

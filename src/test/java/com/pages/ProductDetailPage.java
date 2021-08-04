@@ -47,9 +47,9 @@ public class ProductDetailPage extends BasePage {
     }
 
     public void setReviewRating(String criteria, int nrStars) {
-        for (WebElement el : reviewCriteriaRows) {
-            if (el.findElement(By.cssSelector("th")).getText().equalsIgnoreCase(criteria)) {
-                el.findElement(By.cssSelector("input[id*='" + nrStars + "']")).click();
+        for (WebElement criteriaRow : reviewCriteriaRows) {
+            if (criteriaRow.findElement(By.cssSelector("th")).getText().equalsIgnoreCase(criteria)) {
+                criteriaRow.findElement(By.cssSelector("input[id*='" + nrStars + "']")).click();
                 break;
             }
 
@@ -77,9 +77,9 @@ public class ProductDetailPage extends BasePage {
     }
 
     public boolean receiveValidMsg(String message) {
-        boolean validMsg = false;
+        boolean isValidMsg = false;
         if (successMessage.getText().contains(message)) {
-            return validMsg = true;
+            return isValidMsg = true;
         } else {
             return false;
         }
@@ -87,9 +87,9 @@ public class ProductDetailPage extends BasePage {
     }
 
     public boolean receiveValidationMessage(String message) {
-        boolean validMsg = false;
+        boolean isValidMsg = false;
         if (validationAdvice.getText().contains(message)) {
-            return validMsg = true;
+            return isValidMsg = true;
         } else {
             return false;
         }

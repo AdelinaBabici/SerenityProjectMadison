@@ -1,6 +1,5 @@
 package com.pages;
 
-import com.gargoylesoftware.htmlunit.WaitingRefreshHandler;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,27 +13,27 @@ public class WishlistPage extends BasePage{
     private List<WebElement> wishlistProducts;
 
     @FindBy(css = "a[href*='http://qa2.dev.evozon.com/wishlist/index/configure/'")
-    private WebElementFacade editBtn;
+    private WebElementFacade editButton;
 
     @FindBy(css = ".cart-cell input[class*='input-text qty validate-not-negative-number'")
-    private WebElement updatedQty;
+    private WebElement updatedQuantity;
 
     @FindBy(css = "textarea[title*='Comment'")
     private WebElementFacade commentsSection;
     @FindBy(css = "button[title*='Update Wishlist'")
-    private WebElementFacade updateBtn;
+    private WebElementFacade updateButton;
     @FindBy(css = ".cart-cell button[title*='Add to Cart")
-    private WebElementFacade addToCartBtn;
+    private WebElementFacade addToCartButton;
     @FindBy(css = "table[id*='wishlist-table'] tbody tr")
     private List<WebElement> productContainers;
     @FindBy(css = "td[class*='wishlist-cell1 customer-wishlist-item-info'")
     private List<WebElement> commentContainer;
 
     public void isProductDisplayedOnWishlistPage(String productName) {
-        boolean productFound = false;
-        for (WebElement el :  wishlistProducts) {
-            if (el.findElement(By.cssSelector("h3 a")).getText().equalsIgnoreCase(productName)) {
-                productFound = true;
+        boolean isProductFound = false;
+        for (WebElement product :  wishlistProducts) {
+            if (product.findElement(By.cssSelector("h3 a")).getText().equalsIgnoreCase(productName)) {
+                isProductFound = true;
                 break;
             }
         }
@@ -43,35 +42,35 @@ public void clickOnEditButtonForProduct(String product){
     getWishlistProductContainer(product).findElement(By.cssSelector("a[class*='link-edit button button-secondary'")).click();
 }
     public WebElement getWishlistProductContainer(String name){
-        for (WebElement el : productContainers) {
-            if (el.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
-                return el;
+        for (WebElement product : productContainers) {
+            if (product.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
+                return product;
             }
         }
         return null;
     }
 
 
-    public boolean isQuantityChanged(String qty){
-        return updatedQty.getAttribute("value").equals(qty);
+    public boolean isQuantityChanged(String quantity){
+        return updatedQuantity.getAttribute("value").equals(quantity);
     }
 
 
     public void clickOnUpdateWishlistButton(){
-        clickOn(updateBtn);
+        clickOn(updateButton);
     }
-    public boolean verifyIfCommentIsDisplayed(String comment){
+    public boolean isCommentIsDisplayed(String comment){
         return commentsSection.containsOnlyText(comment);
 
     }
     public void clickOnAddToCartBtn(){
-        clickOn(addToCartBtn);
+        clickOn(addToCartButton);
     }
 
-    public void getWishlistCommentContainer(String name, String comment){
-        for (WebElement el : commentContainer) {
-            if (el.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
-                typeInto(commentsSection,comment);
+    public void getWishlistCommentContainer(String name, String commentForProduct){
+        for (WebElement comment : commentContainer) {
+            if (comment.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
+                typeInto(commentsSection,commentForProduct);
                 break;
             }
         }

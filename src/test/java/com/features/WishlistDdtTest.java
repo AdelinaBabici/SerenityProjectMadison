@@ -40,7 +40,7 @@ public class WishlistDdtTest {
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         headerSteps.navigateToSubcategory(category,subcategory);
         searchSteps.addProductToWishlist(productName);
-        wishlistSteps.commentOnAProductInWishList(productName,comment);
+        wishlistSteps.commentAProductInWishList(productName,comment);
         wishlistSteps.verifyIfCommentIsDisplayed(comment);
     }
 

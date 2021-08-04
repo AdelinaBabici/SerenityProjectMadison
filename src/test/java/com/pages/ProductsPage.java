@@ -7,15 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.Locale;
 
 public class ProductsPage extends BasePage {
 
-    @FindBy(className = "link-wishlist")
-    private WebElementFacade linkWishlist;
-
     @FindBy(css = "h2 a")
-    private List<WebElement> products;
+    private List<WebElement> productName;
 
     @FindBy(xpath = "//ul[@id='configurable_swatch_color']")
     private List<WebElement> colorsContainer;
@@ -35,14 +31,11 @@ public class ProductsPage extends BasePage {
     @FindBy(css = ".add-to-cart-buttons .btn-cart")
     private WebElementFacade addToCartButton;
 
-    public void clickOnAddToWishlistLink() {
-        clickOn(linkWishlist);
-    }
 
-    public void clickOnAProduct(String productName) {
-        for (WebElement el : products) {
-            if (el.getText().contains(productName)) {
-                el.click();
+    public void clickOnAProduct(String name) {
+        for (WebElement product : productName) {
+            if (product.getText().contains(name)) {
+                product.click();
                 break;
             }
         }
