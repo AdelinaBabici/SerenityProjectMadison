@@ -32,6 +32,7 @@ public class OrderInfoPage extends BasePage{
     }
     public WebElement selectEmailOrZipCode(String text) {
         Select oselect = new Select(findByField);
+       // findByField.selectByVisibleText(text);
         List<WebElement> emailOrZipCode = oselect.getOptions();
         for(WebElement el :emailOrZipCode){
             if(el.getText().equalsIgnoreCase(text)){
@@ -53,6 +54,12 @@ public class OrderInfoPage extends BasePage{
 
     public void clickOnContinueButton(){
         clickOn(continueBtn);
+    }
+    public void enterEmail(String text){
+        typeInto(emailField,text);
+    }
+    public void enterZipCode(String text){
+        typeInto(zipField,text);
     }
 
 }

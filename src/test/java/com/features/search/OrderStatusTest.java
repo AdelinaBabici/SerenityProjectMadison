@@ -16,7 +16,8 @@ public class OrderStatusTest extends BaseTest{
     @Test
     public void checkOrderStatus(){
         footerSteps.clickOnOrdersAndReturnsLink();
-        orderInfoSteps.fillInOrderInformationForm("145000015", "aaa","Email Address","aaaaa@yahoo.com");
+        orderInfoSteps.fillInOrderInformationForm("145000015", "aaa","Email Address");
+        orderInfoSteps.enterEmail("aaaaa@yahoo.com");
         orderInfoSteps.clickOnContinueButton();
         orderInfoSteps.verifyIfUserGetOrdersStatus("145000015");
 

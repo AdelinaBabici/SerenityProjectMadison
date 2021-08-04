@@ -9,12 +9,22 @@ public class OrderInfoSteps {
     private OrderInfoPage orderInfoPage;
     private OrderStatusPage orderStatusPage;
 
+
+
     @Step
-    public void fillInOrderInformationForm(String id,String name, String text, String info){
+    public void fillInOrderInformationForm(String id,String name, String text){
         orderInfoPage.enterOrderId(id);
         orderInfoPage.enterLastName(name);
-        orderInfoPage.selectEmailOrZipCode(text);
-        orderInfoPage.enterValidDataInField(text, info);
+       orderInfoPage.selectEmailOrZipCode(text);
+     //   orderInfoPage.enterValidDataInField(text, info);
+    }
+    @Step
+    public void enterEmail(String text){
+        orderInfoPage.enterEmail(text);
+    }
+    @Step
+    public void enterZIPCode(String text){
+        orderInfoPage.enterZipCode(text);
     }
     @Step
     public void clickOnContinueButton(){
