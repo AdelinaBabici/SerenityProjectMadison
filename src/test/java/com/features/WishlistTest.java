@@ -35,7 +35,7 @@ public class WishlistTest extends BaseTest {
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        wishlistSteps.editQuantityInWishlist("5", "AVIATOR SUNGLASSES");
+        wishlistSteps.editQuantityInWishlist("AVIATOR SUNGLASSES","5" );
         wishlistSteps.verifyIfQuantityIsUpdated("5");
 
 

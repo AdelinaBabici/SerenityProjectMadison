@@ -4,6 +4,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 
 public class WishlistPage extends BasePage {
@@ -32,6 +33,7 @@ public class WishlistPage extends BasePage {
     @FindBy(css = "td[class*='wishlist-cell1 customer-wishlist-item-info'")
     private List<WebElement> commentContainer;
 
+
     public void isProductDisplayedOnWishlistPage(String productName) {
         boolean isProductFound = false;
         for (WebElement product : wishlistProducts) {
@@ -48,7 +50,7 @@ public class WishlistPage extends BasePage {
 
     public WebElement getWishlistProductContainer(String name) {
         for (WebElement product : productContainers) {
-            if (product.findElement(By.cssSelector("h3 a")).getText().equals(name)) {
+            if (product.findElement(By.cssSelector("h3 a")).getText().equalsIgnoreCase(name)) {
                 return product;
             }
         }
