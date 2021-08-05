@@ -42,18 +42,27 @@ public class MagentoPage extends BasePage {
 
     @FindBy(xpath = "//*[@id='reviwGrid_table']/tbody/tr[2]")
     private List<WebElementFacade> pendingRev;
+
     @FindBy(css = "a[href*='edit/ret/pending'")
     private WebElementFacade reviewEditLink;
 
-    @FindBy(id ="status_id")
+    @FindBy(id = "status_id")
     private WebElementFacade reviewStatus;
+
     @FindBy(css = "#reviwGrid_table > tbody > tr:nth-child(1)")
     private List<WebElementFacade> reviewContainer;
+
     @FindBy(css = "#status_id")
     private WebElementFacade statusReviewDropdownlist;
+
     @FindBy(css = "button[onclick*='editForm.submit();'")
     private WebElementFacade saveReviewButton;
 
+    @FindBy(css = "li.last.current")
+    private WebElementFacade reviewsCategory;
+
+    @FindBy(className = "review-meta")
+    private WebElementFacade reviewSection;
 
     public void setUsernameField(String userName) {
         typeInto(usernameField, userName);
@@ -118,7 +127,7 @@ public class MagentoPage extends BasePage {
     }
 
 
-    public void clickReviewStatus(){
+    public void clickReviewStatus() {
         clickOn(reviewStatus);
     }
 
@@ -152,10 +161,29 @@ public class MagentoPage extends BasePage {
         return null;
 
     }
-    public void clickOnSaveReviewButton(){
+
+    public void clickOnSaveReviewButton() {
         clickOn(saveReviewButton);
     }
 
+
+    public void clickOnReviewsCategory() {
+        clickOn(reviewsCategory);
+    }
+
+//    public boolean verifyPresenceOfReview(String name) {
+//        boolean isReviewFound = false;
+//        for (WebElement userName : reviewSection) {
+//            if (userName.findElement(org.openqa.selenium.By.className("review-meta")).getText().contains(name)) {
+//                return isReviewFound = true;
+//            }
+//        }
+//        return isReviewFound;
+//
+//    }
+    public boolean verifyPresenceOfReview(String name) {
+        return reviewSection.containsText(name);
+}
 }
 
 
