@@ -21,11 +21,11 @@ public class RegisterSteps {
 
     @Step
     public void registerWithCredentials(String firstName, String lastName, String email, String password, String confirmationPassword) {
-        registerPage.EnterFirstName(firstName);
-        registerPage.EnterLastName(lastName);
-        registerPage.EnterEmail(email);
-        registerPage.EnterPassword(password);
-        registerPage.EnterConfirmationPassword(confirmationPassword);
+        registerPage.enterFirstName(firstName);
+        registerPage.enterLastName(lastName);
+        registerPage.enterEmail(email);
+        registerPage.enterPassword(password);
+        registerPage.enterConfirmationPassword(confirmationPassword);
         registerPage.checkboxNewsletter();
         registerPage.clickRegisterButton();
     }
