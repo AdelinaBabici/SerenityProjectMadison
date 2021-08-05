@@ -19,7 +19,7 @@ public class CartTest extends BaseTest {
     private ProductDetailsSteps productDetailsSteps;
 
     @Test
-    public void AddToCart() {
+    public void addToCart() {
         headerSteps.navigateToSubcategory("WOMEN", "NEW ARRIVALS");
         productsSeps.clickOnAProduct("TORI TANK");
         productsSeps.addToCart("indigo", "m", "1");
@@ -27,7 +27,7 @@ public class CartTest extends BaseTest {
     }
 
     @Test
-    public void AddToCart2() {
+    public void addToCartProductWithoutCaracteristics() {
         headerSteps.navigateToSubcategory("MEN", "NEW ARRIVALS");
         productsSeps.clickOnAProduct("LINEN BLAZER");
         productsSeps.clickAddToCartButton();
