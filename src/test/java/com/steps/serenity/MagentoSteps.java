@@ -35,5 +35,9 @@ public class MagentoSteps {
     public void editPendingReview(String name){
         magentoPage.editPendingReview(name);
   }
+  @Step
+    public void addReviewStatus(){
+        magentoPage.clickReviewStatus();
+  }
 
 }

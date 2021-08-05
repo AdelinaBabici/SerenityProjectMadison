@@ -32,6 +32,7 @@ public class ReviewsTest extends BaseTest {
        // magentoSteps.navigateToPendingReviewsPage("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
         magentoSteps.navigateThroughCategories("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
         magentoSteps.editPendingReview("AVIATOR SUNGLASSES");
+        magentoSteps.addReviewStatus();
       //  productDetailsSteps.verifyMessageOfReviewApproval("Your review has been accepted for moderation.");
     }
 

@@ -44,6 +44,9 @@ public class MagentoPage extends BasePage {
     @FindBy(css = "a[href*='edit/ret/pending'")
     private WebElementFacade reviewEditLink;
 
+    @FindBy(id ="status_id")
+    private WebElementFacade reviewStatus;
+
 
     public void setUsernameField(String userName) {
         typeInto(usernameField, userName);
@@ -113,6 +116,9 @@ public class MagentoPage extends BasePage {
                 clickOn(reviewEditLink);
             }
         }
+    }
+    public void clickReviewStatus(){
+        clickOn(reviewStatus);
     }
 
 }
