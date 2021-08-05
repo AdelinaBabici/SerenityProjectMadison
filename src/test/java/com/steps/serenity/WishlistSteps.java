@@ -30,7 +30,7 @@ public class WishlistSteps {
 
     @Step
     public void editAndVerifyQuantityOfAProduct() {
-        editQuantityInWishlist(quantity, productName);
+        editQuantityInWishlist( productName,quantity);
         verifyIfQuantityIsUpdated(updatedQuantity);
     }
 
