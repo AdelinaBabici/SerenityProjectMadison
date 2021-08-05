@@ -31,7 +31,7 @@ public class ReviewsTest extends BaseTest {
         magentoSteps.loginWithCredentials(Constants.USER_NAME_MAGENTO, Constants.PASSWORD_MAGENTO);
        // magentoSteps.navigateToPendingReviewsPage("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
         magentoSteps.navigateThroughCategories("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
-
+        magentoSteps.editPendingReview("AVIATOR SUNGLASSES");
       //  productDetailsSteps.verifyMessageOfReviewApproval("Your review has been accepted for moderation.");
     }
 

@@ -15,7 +15,7 @@ public class OrderInfoPage extends BasePage {
     private WebElementFacade lastNameField;
 
     @FindBy(css = "select[id*='quick_search_type_id'")
-    private WebElementFacade emailOrZipCodeDropdownlist;
+    private WebElementFacade findOrderByDropdownlist;
 
     @FindBy(css = "input[id='oar_email'")
     private WebElementFacade emailField;
@@ -36,7 +36,7 @@ public class OrderInfoPage extends BasePage {
     }
 
     public WebElement selectEmailOrZipCode(String text) {
-        Select oselect = new Select(emailOrZipCodeDropdownlist);
+        Select oselect = new Select(findOrderByDropdownlist);
         // findByField.selectByVisibleText(text);
         List<WebElement> emailOrZipCode = oselect.getOptions();
         for (WebElement emailZipCode : emailOrZipCode) {

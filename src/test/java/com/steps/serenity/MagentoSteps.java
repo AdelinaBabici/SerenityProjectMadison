@@ -31,4 +31,9 @@ public class MagentoSteps {
   public void navigateThroughCategories(String... pathNodes){
         magentoPage.navigateThroughCategories(pathNodes);
   }
+  @Step
+    public void editPendingReview(String name){
+        magentoPage.editPendingReview(name);
+  }
+
 }

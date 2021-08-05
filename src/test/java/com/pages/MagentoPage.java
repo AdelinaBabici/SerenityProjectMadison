@@ -39,6 +39,11 @@ public class MagentoPage extends BasePage {
     @FindBy(css = "#reviwGrid_table > tbody > tr.even.pointer.on-mouse > td.last > a")
     private WebElementFacade editLink;
 
+    @FindBy(xpath = "//*[@id='reviwGrid_table']/tbody/tr[2]")
+    private List<WebElementFacade> pendingRev;
+    @FindBy(css = "a[href*='edit/ret/pending'")
+    private WebElementFacade reviewEditLink;
+
 
     public void setUsernameField(String userName) {
         typeInto(usernameField, userName);
@@ -63,15 +68,15 @@ public class MagentoPage extends BasePage {
         for (WebElement category : headline) {
             if (category.getText().equalsIgnoreCase(categoryName)) {
                 actions.moveToElement(category).perform();
-                    break;
-                }
-
+                break;
             }
-        }
 
-        public void hoverOverReviewsAndRatings (String category){
-            actions = new Actions(getDriver());
-            for (WebElement cat : headline) {
+        }
+    }
+
+    public void hoverOverReviewsAndRatings(String category) {
+        actions = new Actions(getDriver());
+        for (WebElement cat : headline) {
             if (cat.getText().equalsIgnoreCase(category)) {
                 actions.moveToElement(cat).perform();
             }
@@ -87,15 +92,30 @@ public class MagentoPage extends BasePage {
 //            if (pendingReviews.getText().equalsIgnoreCase(categoryName)) {
 //                clickOn(pendingReviews);
 //            }
-        }
+    }
+
     public void navigateThroughCategories(String... pathNodes) {
         Actions actions = new Actions(getDriver());
-        for (int i = 0; i < pathNodes.length - 1; i++) {
-           WebElement currentElement=getDriver().findElement(By.xpath("//ul/li[a/span[text()='" + pathNodes[i] + "']]"));
+
+        for (int i = 0; i < pathNodes.length; i++) {
+            WebElement currentElement = getDriver().findElement(By.xpath("//ul/li[a/span[text()='" + pathNodes[i] + "']]"));
             actions.moveToElement(currentElement).perform();
+            actions.click().perform();
+
+
+        }
+
+    }
+
+    public void editPendingReview(String name){
+        for(WebElement review: pendingRev){
+            if(review.getText().equalsIgnoreCase(name)){
+                clickOn(reviewEditLink);
+            }
         }
     }
-    }
+
+}
 
 
 
