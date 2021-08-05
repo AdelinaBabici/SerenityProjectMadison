@@ -14,12 +14,11 @@ public class RegisterTest extends BaseTest {
     @Steps
     private RegisterPage registerPage;
 
-    Utils utils = new Utils();
 
     @Test
     @Title("Register with valid credentials")
     public void registerWithValidCredentials() {
-        String email = "testing@" + utils.getRandomNumberUntil(2000) + "testing.com";
+        String email = "testing@" + Utils.getRandomNumberUntil(2000) + "testing.com";
         registerSteps.navigateToRegisterPage();
         registerSteps.registerWithCredentials("Moni", "Holasz", email, "password", "password");
         registerPage.waitForConfirmationMessage();

@@ -16,7 +16,7 @@ public class BaseTest {
     @Before
     public void maximise() {
         driver.navigate().to("http://qa2.dev.evozon.com/");
-        driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
     }
 
