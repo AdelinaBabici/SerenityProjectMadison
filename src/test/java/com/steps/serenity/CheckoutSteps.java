@@ -18,7 +18,7 @@ public class CheckoutSteps {
 
     @Step
     public void saveShippingMethod() throws InterruptedException {
-       // checkoutPage.clickOnFreeShipping();
+        // checkoutPage.clickOnFreeShipping();
         checkoutPage.clickOnShippingContinueButton();
     }
 

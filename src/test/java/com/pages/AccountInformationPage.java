@@ -17,13 +17,15 @@ public class AccountInformationPage extends BasePage {
     @FindBy(css = "[title~=Save]")
     private WebElementFacade saveButton;
 
-    public void enterCurrentPassword(String curentpass){
+    public void enterCurrentPassword(String curentpass) {
         typeInto(currentPassword, curentpass);
     }
-    public void enterNewPassword(String newpass){
+
+    public void enterNewPassword(String newpass) {
         typeInto(newPassword, newpass);
     }
-    public void enterConfirmNewPassword(String confirmpass){
+
+    public void enterConfirmNewPassword(String confirmpass) {
         typeInto(confirmNewPassword, confirmpass);
     }
 

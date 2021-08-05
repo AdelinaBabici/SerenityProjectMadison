@@ -20,10 +20,12 @@ public class DashboardPage extends BasePage {
     public boolean isWelcomeMessage(String text) {
         return welcomeMessage.containsOnlyText("Hello, " + text + "!");
     }
-    public void clickChangePassword(){
+
+    public void clickChangePassword() {
         clickOn(changePassword);
     }
-    public boolean isSuccessMessage(String message){
+
+    public boolean isSuccessMessage(String message) {
         return successMessage.containsText("The account information has been saved.");
     }
 }

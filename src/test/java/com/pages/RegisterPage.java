@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 
 public class RegisterPage extends BasePage {
@@ -35,7 +34,7 @@ public class RegisterPage extends BasePage {
     @FindBy(className = "validation-advice")
     private List<WebElement> validationMessages;
 
-    @FindBy(id ="is_subscribed")
+    @FindBy(id = "is_subscribed")
     private WebElementFacade newsletter;
 
     public void EnterFirstName(String firstName) {
@@ -61,15 +60,16 @@ public class RegisterPage extends BasePage {
     public void clickRegisterButton() {
         clickOn(registerButton);
     }
-    public void checkboxNewsletter(){
+
+    public void checkboxNewsletter() {
         clickOn(newsletter);
     }
 
-    public String getConfirmationMessage(){
+    public String getConfirmationMessage() {
         return registrationConfirmationMessage.getText();
     }
 
-    public WebElement waitForConfirmationMessage(){
+    public WebElement waitForConfirmationMessage() {
         return new WebDriverWait(getDriver(), 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".success-msg span")));
     }
 

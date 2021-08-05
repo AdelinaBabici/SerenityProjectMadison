@@ -11,42 +11,47 @@ public class WishlistSteps {
     private ProductsPage productPage;
     private LoginPage loginPage;
     private ProductDetailPage productDetailPage;
-    private String qty;
+    private String quantity;
     private String productName;
-    private String qtyy;
+    private String updatedQuantity;
 
     @Step
-    public void verifyPresenceOfProductInWishlist(String value){
-       wishlistPage.isProductDisplayedOnWishlistPage(value);
+    public void verifyPresenceOfProductInWishlist(String value) {
+        wishlistPage.isProductDisplayedOnWishlistPage(value);
     }
+
     @Step
-    public void editQuantityInWishlist(String name, String qty){
-       wishlistPage.clickOnEditButtonForProduct(name);
-        productDetailPage.changeCurrentQuantity(qty);
+    public void editQuantityInWishlist(String name, String quantity) {
+        wishlistPage.clickOnEditButtonForProduct(name);
+        productDetailPage.changeCurrentQuantity(quantity);
         productDetailPage.clickOnUpdateWishlistLink();
 
     }
+
     @Step
-    public void editAndVerifyQuantityOfAProduct(){
-        editQuantityInWishlist(qty,productName);
-        verifyIfQuantityIsUpdated(qtyy);
+    public void editAndVerifyQuantityOfAProduct() {
+        editQuantityInWishlist(quantity, productName);
+        verifyIfQuantityIsUpdated(updatedQuantity);
     }
+
     @Step
-    public void verifyIfQuantityIsUpdated(String quantity){
+    public void verifyIfQuantityIsUpdated(String quantity) {
         Assert.assertTrue(wishlistPage.isQuantityChanged(quantity));
     }
+
     @Step
-    public void commentAProductInWishList(String name, String comment){
-        wishlistPage.getWishlistCommentContainer(name,comment);
+    public void commentAProductInWishList(String name, String comment) {
+        wishlistPage.getWishlistCommentContainer(name, comment);
         wishlistPage.clickOnUpdateWishlistButton();
     }
+
     @Step
-    public void verifyIfCommentIsDisplayed(String text){
+    public void verifyIfCommentIsDisplayed(String text) {
         Assert.assertTrue(wishlistPage.isCommentIsDisplayed(text));
     }
 
     @Step
-    public void addProductToCart(){
-        wishlistPage.clickOnAddToCartBtn();
+    public void addProductToCart() {
+        wishlistPage.clickOnAddToCartButton();
     }
 }

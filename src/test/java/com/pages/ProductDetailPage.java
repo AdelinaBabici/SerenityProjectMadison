@@ -5,27 +5,34 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class ProductDetailPage extends BasePage {
 
     @FindBy(css = ".qty-wrapper input[id*='qty'")
     private WebElementFacade quantityInput;
+
     @FindBy(css = "a[href*='updateItemOptions'")
     private WebElementFacade updateWishlistLink;
+
     @FindBy(css = "a[href*='review-form'")
     private WebElementFacade addAReviewLink;
+
     @FindBy(css = "#product-review-table tbody tr")
     private List<WebElement> reviewCriteriaRows;
+
     @FindBy(css = "textarea[name='detail'")
     private WebElementFacade reviewSection;
+
     @FindBy(css = "input[id='summary_field'")
     private WebElementFacade summaryOfReview;
+
     @FindBy(css = "input[id='nickname_field'")
     private WebElementFacade nicknameForReview;
+
     @FindBy(css = "button[title='Submit Review'")
     private WebElementFacade submitReviewButton;
+
     @FindBy(css = "li[class='success-msg'")
     private WebElementFacade successMessage;
 
@@ -97,7 +104,6 @@ public class ProductDetailPage extends BasePage {
 
     public void isValidationMessageDisplayed(String message) {
         Assert.assertTrue("Validation messaged is not diplayed.", receiveValidationMessage(message));
-
 
 
     }

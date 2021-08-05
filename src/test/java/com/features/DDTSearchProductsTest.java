@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value ="src/resource/SearchProducts.csv")
+@UseTestDataFrom(value = "src/resource/SearchProducts.csv")
 public class DDTSearchProductsTest extends BaseTest {
 
     @Steps

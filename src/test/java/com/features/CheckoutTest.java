@@ -8,13 +8,10 @@ import org.junit.Test;
 public class CheckoutTest extends BaseTest {
     @Steps
     private ProductsSeps productsSeps;
-
     @Steps
     private HeaderSteps headerSteps;
-
     @Steps
     private CartSteps cartSteps;
-
     @Steps
     private ProductDetailsSteps productDetailsSteps;
     @Steps

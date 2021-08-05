@@ -17,7 +17,7 @@ public class DashboardTest extends BaseTest {
     private LoginSteps loginSteps;
 
     @Test
-    public void changePasswordWithSuccess(){
+    public void changePasswordWithSuccess() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.USER_TO_UPDATE_USERNAME, Constants.USER_TO_UPDATE_PASSWORD);
         dashboardSteps.navigateToDashboardPage();

@@ -7,7 +7,6 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.stepdata.StepData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import java.io.IOException;
 
 @RunWith(SerenityRunner.class)

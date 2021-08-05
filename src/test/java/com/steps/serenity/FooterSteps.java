@@ -7,7 +7,7 @@ public class FooterSteps {
     private FooterPage footerPage;
 
     @Step
-    public void clickOnOrdersAndReturnsLink(){
+    public void clickOnOrdersAndReturnsLink() {
         footerPage.clickOnOrdersAndReturnsLink();
     }
 }

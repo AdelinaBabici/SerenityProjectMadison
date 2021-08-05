@@ -8,19 +8,20 @@ public class ProductsSeps {
     private ProductsPage productsPage;
 
     @Step
-    public void clickOnAProduct(String name){
+    public void clickOnAProduct(String name) {
         productsPage.clickOnAProduct(name);
     }
 
     @Step
-    public  void addToCart(String color, String size, String quantity){
+    public void addToCart(String color, String size, String quantity) {
         productsPage.selectByColorName(color);
         productsPage.selectSizeByName(size);
         productsPage.typeQuantity(quantity);
         productsPage.clickAddToCartButton();
     }
+
     @Step
-    public void clickAddToCartButton(){
+    public void clickAddToCartButton() {
         productsPage.clickAddToCartButton();
     }
 

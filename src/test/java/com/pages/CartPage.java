@@ -4,7 +4,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class CartPage extends BasePage {
@@ -16,7 +15,6 @@ public class CartPage extends BasePage {
     private WebElementFacade proceedToCheckoutButton;
 
 
-
     public boolean verifyPresenceOfProduct(String name) {
         boolean isProductFound = false;
         for (WebElement productName : productInfo) {
@@ -26,7 +24,8 @@ public class CartPage extends BasePage {
         }
         return isProductFound;
     }
-    public void clickOnCheckoutButton(){
+
+    public void clickOnCheckoutButton() {
         clickOn(proceedToCheckoutButton);
     }
 

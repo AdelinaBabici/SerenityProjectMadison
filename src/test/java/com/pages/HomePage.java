@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
     @FindBy(css = "a[title='Register']")
     private WebElementFacade registerLink;
 
-    @FindBy(css ="a[href*='/changepass']")
+    @FindBy(css = "a[href*='/changepass']")
     private WebElementFacade changePassword;
 
     public void clickMyAccount() {
@@ -43,7 +43,6 @@ public class HomePage extends BasePage {
     public void clickRegisterLink() {
         clickOn(registerLink);
     }
-//    public void clickChangePassword(){
-//        clickOn(changePassword);
-    }
+
+}
 

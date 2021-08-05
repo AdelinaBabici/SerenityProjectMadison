@@ -57,13 +57,13 @@ public class ProductsPage extends BasePage {
         }*/
     }
 
-        public void selectSizeByName (String sizeName){
-            for (WebElement element : sizesContainer) {
-                if (element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")).isDisplayed()) {
-                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")));
-                    break;
-                }
+    public void selectSizeByName(String sizeName) {
+        for (WebElement element : sizesContainer) {
+            if (element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")).isDisplayed()) {
+                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element.findElement(By.xpath("//a[contains(@name,'" + sizeName + "')]")));
+                break;
             }
+        }
 /*        for (WebElement el : sizesContainer) {
             if (el.findElement(By.cssSelector("a")).getAttribute("name").equals(sizeName)) {
                 JavascriptExecutor executor = (JavascriptExecutor) getDriver();
@@ -71,15 +71,15 @@ public class ProductsPage extends BasePage {
                 break;
             }
         }*/
-        }
-
-        public void typeQuantity (String quantity){
-            quantityInputField.type(quantity);
-        }
-
-        public void clickAddToCartButton () {
-            addToCartButton.click();
-        }
-
-
     }
+
+    public void typeQuantity(String quantity) {
+        quantityInputField.type(quantity);
+    }
+
+    public void clickAddToCartButton() {
+        addToCartButton.click();
+    }
+
+
+}

@@ -19,7 +19,7 @@ public class RegisterTest extends BaseTest {
     @Test
     @Title("Register with valid credentials")
     public void registerWithValidCredentials() {
-        String email = "testing@"+ utils.getRandomNumberUntil(2000) +"testing.com";
+        String email = "testing@" + utils.getRandomNumberUntil(2000) + "testing.com";
         registerSteps.navigateToRegisterPage();
         registerSteps.registerWithCredentials("Moni", "Holasz", email, "password", "password");
         registerPage.waitForConfirmationMessage();

@@ -5,7 +5,7 @@ import com.steps.serenity.*;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 
-public class WishlistTest extends BaseTest{
+public class WishlistTest extends BaseTest {
 
     @Steps
     private WishlistSteps wishlistSteps;
@@ -22,40 +22,41 @@ public class WishlistTest extends BaseTest{
 
 
     @Test
-    public void addProductToWishlist(){
-        headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
+    public void addProductToWishlist() {
+        headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        loginSteps.loginWithCredentials(Constants.EMAIL,Constants.PASS);
+        loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
         wishlistSteps.verifyPresenceOfProductInWishlist("AVIATOR SUNGLASSES");
     }
 
     @Test
-    public void editQuantityOfAProductInWishList(){
+    public void editQuantityOfAProductInWishList() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
-        headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
+        headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        wishlistSteps.editQuantityInWishlist("5","AVIATOR SUNGLASSES");
+        wishlistSteps.editQuantityInWishlist("5", "AVIATOR SUNGLASSES");
         wishlistSteps.verifyIfQuantityIsUpdated("5");
 
 
     }
+
     @Test
-    public void enterCommentForAProduct(){
+    public void enterCommentForAProduct() {
 
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
-        headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
+        headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
-        wishlistSteps.commentAProductInWishList("AVIATOR SUNGLASSES","beautiful");
+        wishlistSteps.commentAProductInWishList("AVIATOR SUNGLASSES", "beautiful");
         wishlistSteps.verifyIfCommentIsDisplayed("beautiful");
     }
 
     @Test
-    public void addProductFromWishlistToCart(){
+    public void addProductFromWishlistToCart() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
-        headerSteps.navigateToSubcategory("ACCESSORIES","EYEWEAR");
+        headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         searchSteps.addProductToWishlist("AVIATOR SUNGLASSES");
         wishlistSteps.addProductToCart();
         cartSteps.verifyPresenceOfProductInCart("AVIATOR SUNGLASSES");

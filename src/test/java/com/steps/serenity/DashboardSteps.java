@@ -17,12 +17,12 @@ public class DashboardSteps {
     private Constants constants;
 
     @Step
-    public void navigateToDashboardPage(){
+    public void navigateToDashboardPage() {
         dashboardPage.getDriver().get(constants.URL + "customer/account/");
     }
 
     @Step
-    public void changeAccountPassword(String currentPassword, String newPassword, String confirmationPassword){
+    public void changeAccountPassword(String currentPassword, String newPassword, String confirmationPassword) {
         dashboardPage.clickChangePassword();
         accountInformationPage.enterCurrentPassword("eminem");
         accountInformationPage.enterNewPassword("eminem");
@@ -31,7 +31,7 @@ public class DashboardSteps {
     }
 
     @Step
-    public void verifyIfPasswordChanged(String message){
+    public void verifyIfPasswordChanged(String message) {
         Assert.assertTrue(dashboardPage.isSuccessMessage(message));
     }
 }

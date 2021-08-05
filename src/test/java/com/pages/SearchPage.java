@@ -4,7 +4,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class SearchPage extends BasePage {
@@ -30,7 +29,7 @@ public class SearchPage extends BasePage {
         }
         return null;
     }
-    
+
 
     public String getNoResultsMessage() {
         return noResultsMessage.getText();

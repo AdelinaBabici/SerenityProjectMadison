@@ -5,24 +5,24 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(id="email")
+    @FindBy(id = "email")
     private WebElementFacade emailField;
 
-    @FindBy(id="pass")
+    @FindBy(id = "pass")
     private WebElementFacade passwordField;
 
-    @FindBy(id="send2")
+    @FindBy(id = "send2")
     private WebElementFacade loginButton;
 
     public void setEmailField(String email) {
-        typeInto(emailField,email);
+        typeInto(emailField, email);
     }
 
     public void setPasswordField(String password) {
-        typeInto(passwordField,password);
+        typeInto(passwordField, password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
 }

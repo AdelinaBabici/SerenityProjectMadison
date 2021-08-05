@@ -31,17 +31,17 @@ public class RegisterSteps {
     }
 
     @Step
-    public  void  verifyConfirmationMessage(){
-        Assert.assertEquals(registerPage.getConfirmationMessage(),"Thank you for registering with Madison Island.");
+    public void verifyConfirmationMessage() {
+        Assert.assertEquals(registerPage.getConfirmationMessage(), "Thank you for registering with Madison Island.");
     }
 
     @Step
-    public  void  verifyValidationMessages(String message){
-        Assert.assertEquals(registerPage.verifyValidationMessages(message),true);
+    public void verifyValidationMessages(String message) {
+        Assert.assertEquals(registerPage.verifyValidationMessages(message), true);
     }
 
     @Step
-    public void verifyRegisterIn(String value){
+    public void verifyRegisterIn(String value) {
         Assert.assertTrue(dashboardPage.isWelcomeMessage(value));
 
     }

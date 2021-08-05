@@ -35,15 +35,14 @@ public class WishlistDdtTest {
 
 
     @Test
-    public void commentOnAProduct(){
+    public void commentOnAProduct() {
         loginSteps.navigateToLoginPage();
         loginSteps.loginWithCredentials(Constants.EMAIL, Constants.PASS);
-        headerSteps.navigateToSubcategory(category,subcategory);
+        headerSteps.navigateToSubcategory(category, subcategory);
         searchSteps.addProductToWishlist(productName);
-        wishlistSteps.commentAProductInWishList(productName,comment);
+        wishlistSteps.commentAProductInWishList(productName, comment);
         wishlistSteps.verifyIfCommentIsDisplayed(comment);
     }
-
 
 
 }
