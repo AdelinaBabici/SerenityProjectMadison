@@ -3,7 +3,6 @@ package com.steps.serenity;
 import com.pages.MagentoPage;
 import com.utils.Constants;
 import net.thucydides.core.annotations.Step;
-import org.yecht.Data;
 
 public class MagentoSteps {
 
@@ -31,13 +30,10 @@ public class MagentoSteps {
   public void navigateThroughCategories(String... pathNodes){
         magentoPage.navigateThroughCategories(pathNodes);
   }
+
   @Step
-    public void editPendingReview(String name){
-        magentoPage.editPendingReview(name);
-  }
-  @Step
-    public void addReviewStatus(){
-        magentoPage.clickReviewStatus();
+    public void addReviewStatus(String name){
+      magentoPage.clickOnPendingReview(name);
   }
 
 }

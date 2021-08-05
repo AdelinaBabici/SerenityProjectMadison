@@ -46,6 +46,8 @@ public class MagentoPage extends BasePage {
 
     @FindBy(id ="status_id")
     private WebElementFacade reviewStatus;
+    @FindBy(css = "#reviwGrid_table > tbody > tr:nth-child(1)")
+    private List<WebElementFacade> reviewContainer;
 
 
     public void setUsernameField(String userName) {
@@ -110,15 +112,23 @@ public class MagentoPage extends BasePage {
 
     }
 
-    public void editPendingReview(String name){
-        for(WebElement review: pendingRev){
-            if(review.getText().equalsIgnoreCase(name)){
-                clickOn(reviewEditLink);
-            }
-        }
-    }
+
     public void clickReviewStatus(){
         clickOn(reviewStatus);
+    }
+
+
+    public void clickOnPendingReview(String product) {
+        getReviewContainer(product).findElement(org.openqa.selenium.By.cssSelector("#reviwGrid_table > tbody > tr:nth-child(1) > td:nth-child(9)")).click();
+    }
+
+    public WebElement getReviewContainer(String name) {
+        for (WebElement product : reviewContainer) {
+            if (product.findElement(org.openqa.selenium.By.cssSelector("#reviwGrid_table > tbody > tr:nth-child(1) > td:nth-child(9)")).getText().equalsIgnoreCase(name)) {
+                return product;
+            }
+        }
+        return null;
     }
 
 }
