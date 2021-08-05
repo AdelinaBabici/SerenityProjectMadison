@@ -5,6 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -48,6 +49,10 @@ public class MagentoPage extends BasePage {
     private WebElementFacade reviewStatus;
     @FindBy(css = "#reviwGrid_table > tbody > tr:nth-child(1)")
     private List<WebElementFacade> reviewContainer;
+    @FindBy(css = "#status_id")
+    private WebElementFacade statusReviewDropdownlist;
+    @FindBy(css = "button[onclick*='editForm.submit();'")
+    private WebElementFacade saveReviewButton;
 
 
     public void setUsernameField(String userName) {
@@ -129,6 +134,26 @@ public class MagentoPage extends BasePage {
             }
         }
         return null;
+    }
+
+
+    public WebElement approveReview(String text) {
+        Select oselect = new Select(statusReviewDropdownlist);
+        // findByField.selectByVisibleText(text);
+        List<WebElement> status = oselect.getOptions();
+        for (WebElement approve : status) {
+            if (approve.getText().equalsIgnoreCase(text)) {
+                approve.click();
+                return approve;
+
+            }
+
+        }
+        return null;
+
+    }
+    public void clickOnSaveReviewButton(){
+        clickOn(saveReviewButton);
     }
 
 }

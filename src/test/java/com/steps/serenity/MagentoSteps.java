@@ -32,8 +32,10 @@ public class MagentoSteps {
   }
 
   @Step
-    public void addReviewStatus(String name){
+    public void addReviewStatus(String name, String status){
       magentoPage.clickOnPendingReview(name);
+      magentoPage.approveReview(status);
+      magentoPage.clickOnSaveReviewButton();
   }
 
 }
