@@ -23,14 +23,6 @@ public class MagentoSteps {
     }
 
     @Step
-    public void navigateToPendingReviewsPage(String catalog, String reviews, String customer, String pending) {
-        magentoPage.hoverOverCatalog(catalog);
-        //magentoPage.hoverOverReviewsAndRatings(reviews);
-//        magentoPage.hoverOverCustomerReviews(customer);
-//        magentoPage.hoverOverPendingReviews(pending);
-    }
-
-    @Step
     public void navigateThroughCategories(String... pathNodes) {
         magentoPage.navigateThroughCategories(pathNodes);
     }
@@ -46,10 +38,7 @@ public class MagentoSteps {
     public void navigateToMadisonPage() {
         magentoPage.getDriver().get(Constants.URL);
     }
-//    @Step
-//    public void verifyIfReviewsAppears(){
-//        magentoPage.clickOnReviewsCategory();
-//    }
+
     @Step
     public void verifyPresenceOfReviewInReviewsSection(String name) {
         Assert.assertTrue(magentoPage.verifyPresenceOfReview(name));

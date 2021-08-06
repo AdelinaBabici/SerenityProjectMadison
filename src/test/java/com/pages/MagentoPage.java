@@ -28,26 +28,11 @@ public class MagentoPage extends BasePage {
     @FindBy(xpath = "//*[@id='nav']/li/a/span")
     private List<WebElementFacade> headline;
 
-    @FindBy(css = "#nav ul li.level1")
-    private List<WebElementFacade> reviewAndRatings;
-
-    @FindBy(css = "#nav > li.active.parent.level0 > ul > li:nth-child(6) > ul > li.parent.level2 > a")
-    private WebElementFacade customersReviews;
-
-    @FindBy(css = "#nav > li.active.parent.level0 > ul > li:nth-child(6) > ul > li.parent.level2 > ul > li:nth-child(1) > a > span")
-    private WebElementFacade pendingReviews;
-
-    @FindBy(css = "#reviwGrid_table > tbody > tr.even.pointer.on-mouse > td.last > a")
-    private WebElementFacade editLink;
-
     @FindBy(xpath = "//*[@id='reviwGrid_table']/tbody/tr[2]")
-    private List<WebElementFacade> pendingRev;
+    private List<WebElementFacade> pendingReview;
 
     @FindBy(css = "a[href*='edit/ret/pending'")
     private WebElementFacade reviewEditLink;
-
-    @FindBy(id = "status_id")
-    private WebElementFacade reviewStatus;
 
     @FindBy(css = "#reviwGrid_table > tbody > tr:nth-child(1)")
     private List<WebElementFacade> reviewContainer;
@@ -58,8 +43,6 @@ public class MagentoPage extends BasePage {
     @FindBy(css = "button[onclick*='editForm.submit();'")
     private WebElementFacade saveReviewButton;
 
-    @FindBy(css = "li.last.current")
-    private WebElementFacade reviewsCategory;
 
     @FindBy(className = "review-meta")
     private WebElementFacade reviewSection;
@@ -100,17 +83,6 @@ public class MagentoPage extends BasePage {
                 actions.moveToElement(cat).perform();
             }
         }
-//
-//        public void hoverOverCustomerReviews (String categoryName){
-//            actions = new Actions(getDriver());
-//            if (customersReviews.getText().equalsIgnoreCase(categoryName)) {
-//                actions.moveToElement(customersReviews);
-//            }
-//        }
-//        public void hoverOverPendingReviews (String categoryName){
-//            if (pendingReviews.getText().equalsIgnoreCase(categoryName)) {
-//                clickOn(pendingReviews);
-//            }
     }
 
     public void navigateThroughCategories(String... pathNodes) {
@@ -125,12 +97,6 @@ public class MagentoPage extends BasePage {
         }
 
     }
-
-
-    public void clickReviewStatus() {
-        clickOn(reviewStatus);
-    }
-
 
     public void clickOnPendingReview(String product) {
         getReviewContainer(product).findElement(org.openqa.selenium.By.cssSelector("#reviwGrid_table > tbody > tr:nth-child(1) > td:nth-child(9)")).click();
@@ -166,24 +132,9 @@ public class MagentoPage extends BasePage {
         clickOn(saveReviewButton);
     }
 
-
-    public void clickOnReviewsCategory() {
-        clickOn(reviewsCategory);
-    }
-
-//    public boolean verifyPresenceOfReview(String name) {
-//        boolean isReviewFound = false;
-//        for (WebElement userName : reviewSection) {
-//            if (userName.findElement(org.openqa.selenium.By.className("review-meta")).getText().contains(name)) {
-//                return isReviewFound = true;
-//            }
-//        }
-//        return isReviewFound;
-//
-//    }
     public boolean verifyPresenceOfReview(String name) {
         return reviewSection.containsText(name);
-}
+    }
 }
 
 

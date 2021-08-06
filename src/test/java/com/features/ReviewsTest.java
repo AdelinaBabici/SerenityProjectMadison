@@ -29,20 +29,14 @@ public class ReviewsTest extends BaseTest {
         productDetailsSteps.clickOnSubmitReviewButton();
         magentoSteps.navigateToMagentoLoginPage();
         magentoSteps.loginWithCredentials(Constants.USER_NAME_MAGENTO, Constants.PASSWORD_MAGENTO);
-       // magentoSteps.navigateToPendingReviewsPage("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
-        magentoSteps.navigateThroughCategories("Catalog","Reviews and Ratings", "Customer Reviews", "Pending Reviews");
-
-        magentoSteps.addReviewStatus("AVIATOR SUNGLASSES","Approved");
+        magentoSteps.navigateThroughCategories("Catalog", "Reviews and Ratings", "Customer Reviews", "Pending Reviews");
+        magentoSteps.addReviewStatus("AVIATOR SUNGLASSES", "Approved");
         magentoSteps.navigateToMadisonPage();
         headerSteps.navigateToSubcategory("ACCESSORIES", "EYEWEAR");
         productsSeps.clickOnAProduct("AVIATOR SUNGLASSES");
         productDetailsSteps.clickOnAddAReviewLink();
         magentoSteps.verifyPresenceOfReviewInReviewsSection("ADA");
 
-
-
-
-      //  productDetailsSteps.verifyMessageOfReviewApproval("Your review has been accepted for moderation.");
     }
 
 }
