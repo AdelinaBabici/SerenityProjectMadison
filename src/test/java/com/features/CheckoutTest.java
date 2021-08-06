@@ -18,6 +18,8 @@ public class CheckoutTest extends BaseTest {
     private LoginSteps loginSteps;
     @Steps
     private CheckoutSteps checkoutSteps;
+    @Steps
+    private MagentoSteps magentoSteps;
 
     @Test
     public void placeAnOrder() throws InterruptedException {
@@ -32,6 +34,15 @@ public class CheckoutTest extends BaseTest {
         checkoutSteps.savePaymentInformation();
         checkoutSteps.placeOrder();
         checkoutSteps.verifyOrderPlaceMessage();
+
+    }
+    @Test
+    public void verifyQuantityOfAProductInMagento(){
+        magentoSteps.navigateToMagentoLoginPage();
+        magentoSteps.loginWithCredentials(Constants.USER_NAME_MAGENTO, Constants.PASSWORD_MAGENTO);
+        magentoSteps.navigateThroughCategories("Catalog", "Manage Products");
+        magentoSteps.addProduct("Clothing", "Pink dress", "beautiful","beauty");
+        magentoSteps.addProductCaracteristics("Dress", "2","Enabled" );
 
     }
 }

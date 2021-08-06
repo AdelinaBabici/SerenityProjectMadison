@@ -43,4 +43,22 @@ public class MagentoSteps {
     public void verifyPresenceOfReviewInReviewsSection(String name) {
         Assert.assertTrue(magentoPage.verifyPresenceOfReview(name));
     }
+    @Step
+    public void addProduct(String attribute, String name, String description, String shortdescription){
+        magentoPage.clickAddProductButton();
+        magentoPage.setAttribute(attribute);
+        magentoPage.clickOnContinueButton();
+        magentoPage.addNameToProduct(name);
+        magentoPage.addDescriptionToProduct(description);
+        magentoPage.addShortDescriptionToProduct(shortdescription);
+    }
+    @Step
+    public void addProductCaracteristics(String sku, String weight, String status){
+        magentoPage.addSKUToProduct(sku);
+        magentoPage.addWeightToProduct(weight);
+        magentoPage.setStatus(status);
+    }
+
+
+
 }

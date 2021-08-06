@@ -38,5 +38,4 @@ public class ReviewsTest extends BaseTest {
         magentoSteps.verifyPresenceOfReviewInReviewsSection("ADA");
 
     }
-
 }
